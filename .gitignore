@@ -1,0 +1,24 @@
+# 1. Secret Environment Variables (NEVER COMMIT THESE)
+.env
+.env.*
+!.env.example
+
+# 2. Virtual Environment
+.venv/
+venv/
+ENV/
+
+# 3. Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# 4. Raw Hugging Face Cache (keep Golden Set tracked later, ignore heavy raw downloads)
+data/raw/
+
+# 5. OS / Editor Junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
