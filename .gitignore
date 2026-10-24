@@ -22,3 +22,7 @@ data/raw/
 Thumbs.db
 .vscode/
 .idea/
+
+# 6. Temporary evaluation runs (keep official results/baseline.json tracked)
+results/smoke_eval.json
+results/dev_eval.json
