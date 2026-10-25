@@ -3,320 +3,44 @@
   "model": "openai/gpt-oss-20b",
   "dataset_split": "data\\golden_test.jsonl",
   "num_samples": 100,
-  "timestamp_utc": "2026-10-24T22:46:44.087204+00:00",
+  "timestamp_utc": "2026-10-25T14:38:28.251629+00:00",
   "metrics": {
     "schema_valid_rate": 1.0,
-    "category_accuracy": 0.77,
-    "priority_accuracy": 0.7,
-    "overall_accuracy": 0.735,
-    "joint_exact_match_rate": 0.59,
-    "p50_latency_ms": 1066.15,
-    "p95_latency_ms": 11726.12,
-    "avg_cost_per_request_usd": 0.00018897,
-    "total_cost_usd": 0.018897
+    "category_accuracy": 0.76,
+    "priority_accuracy": 0.73,
+    "overall_accuracy": 0.745,
+    "joint_exact_match_rate": 0.63,
+    "p50_latency_ms": 3837.26,
+    "p95_latency_ms": 9385.97,
+    "avg_cost_per_request_usd": 0.00019273,
+    "total_cost_usd": 0.019273
   },
   "per_ticket_results": [
     {
-      "ticket_id": "ticket_164",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "CANCEL",
-        "priority": "high",
-        "product": "Withdrawal"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "medium",
-        "product": "Withdrawal Penalty",
-        "summary": "Customer wants to check the withdrawal penalty.",
-        "draft_reply": "Hi,\n\nThank you for reaching out. The withdrawal penalty depends on your account type and the amount you withdraw. You can view the exact fee in the \"Fees & Charges\" section of your account dashboard or by clicking this link: https://example.com/fees.\n\nIf you need further assistance, let us know.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 1054.23,
-      "prompt_tokens": 677,
-      "completion_tokens": 452,
-      "cost_usd": 0.00018637
-    },
-    {
-      "ticket_id": "ticket_153",
+      "ticket_id": "ticket_058",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
       "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Invoice",
-        "summary": "Customer needs help downloading invoice #00108.",
-        "draft_reply": "Hello,\n\nI’m sorry you’re having trouble downloading invoice #00108. Please log into your account, navigate to the Orders section, and click the “View Invoice” link next to that order. If the download still doesn’t work, let us know and we’ll provide the invoice directly.\n\nThank you for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 607.8,
-      "prompt_tokens": 678,
-      "completion_tokens": 300,
-      "cost_usd": 0.00014085
-    },
-    {
-      "ticket_id": "ticket_145",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "medium",
-        "product": "Payment"
-      },
-      "prediction": {
-        "category": "PAYMENT",
+        "category": "SUBSCRIPTION",
         "priority": "low",
-        "product": "Payment Options",
-        "summary": "Customer wants to know how to view available payment methods.",
-        "draft_reply": "Sure! To see which payment methods you can use, log into your account, go to the checkout page, and the payment options will be listed under the payment section. If you need further help, let us know."
-      },
-      "error": null,
-      "latency_ms": 792.96,
-      "prompt_tokens": 678,
-      "completion_tokens": 487,
-      "cost_usd": 0.00019695
-    },
-    {
-      "ticket_id": "ticket_071",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Help needed to submit a secondary shipping address.",
-        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble adding a secondary shipping address. Here’s a quick step‑by‑step guide:\n\n1. Log in to your account and go to the \"Shipping & Billing\" section.\n2. Click \"Add Address\" or \"Edit Address\" next to your primary address.\n3. In the address form, check the box that says \"Add a secondary address\" (or similar wording).\n4. Fill in the secondary address details and click \"Save\".\n\nIf you still see an error or the option isn’t available, let me know the exact message you’re receiving and I’ll dig deeper. Thanks for reaching out!\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 619.39,
-      "prompt_tokens": 683,
-      "completion_tokens": 346,
-      "cost_usd": 0.00015502
-    },
-    {
-      "ticket_id": "ticket_109",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "CANCEL",
-        "priority": "high",
         "product": "General"
       },
       "prediction": {
         "category": "SUBSCRIPTION",
         "priority": "low",
         "product": "General",
-        "summary": "Customer requests information about termination fee.",
-        "draft_reply": "Thank you for reaching out. The termination fee for your subscription is $XX. If you need further assistance, let us know."
+        "summary": "Customer asks how to subscribe to the newsletter.",
+        "draft_reply": "Thank you for reaching out! To subscribe to our newsletter, simply visit our website, scroll to the footer, and enter your email address in the subscription box. If you need further assistance, let us know."
       },
       "error": null,
-      "latency_ms": 700.48,
-      "prompt_tokens": 678,
-      "completion_tokens": 358,
-      "cost_usd": 0.00015825
-    },
-    {
-      "ticket_id": "ticket_078",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping Address"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping Address",
-        "summary": "Customer wants to add a new shipping address to their account.",
-        "draft_reply": "Sure, I'd be happy to help you add a new shipping address. Please log in, go to your account settings, click \"Shipping Addresses\", then \"Add New Address\". If you need further assistance, let us know."
-      },
-      "error": null,
-      "latency_ms": 914.28,
-      "prompt_tokens": 680,
-      "completion_tokens": 501,
-      "cost_usd": 0.0002013
-    },
-    {
-      "ticket_id": "ticket_196",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account Type"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account Type",
-        "summary": "Customer wants to know how to switch to a different account type.",
-        "draft_reply": "Hi,\n\nI understand you’d like to switch to a different account type. Here’s how:\n1. Log in and go to Settings > Account.\n2. Click “Change Account Type” and choose the desired plan.\n3. Confirm the change and you’ll see the new features immediately.\n\nIf you run into any issues, let us know and we’ll help you right away.\n\nThanks for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 668.63,
-      "prompt_tokens": 688,
-      "completion_tokens": 455,
-      "cost_usd": 0.0001881
-    },
-    {
-      "ticket_id": "ticket_163",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "Order Tracking"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer cannot track their order.",
-        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble locating your shipment. Please try the following:\n1. Log into your account and go to \"Orders\" – the tracking number should be listed next to the order.\n2. Click the tracking link; it will redirect you to the carrier’s website.\n3. If the status still shows \"Pending\" or you can’t find a link, let us know the order number and we’ll look into it right away.\n\nThank you for your patience!"
-      },
-      "error": null,
-      "latency_ms": 766.54,
-      "prompt_tokens": 678,
-      "completion_tokens": 469,
-      "cost_usd": 0.00019155
-    },
-    {
-      "ticket_id": "ticket_049",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Corporate Newsletter",
-        "summary": "Customer wants instructions to subscribe to the corporate newsletter.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out! To receive our corporate newsletter, simply visit our website, scroll to the footer, click the \"Subscribe\" link, and enter your email address. If you prefer, you can also add us to your address book to ensure delivery.\n\nLet us know if you need any further assistance.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 1247.82,
-      "prompt_tokens": 682,
-      "completion_tokens": 833,
-      "cost_usd": 0.00030105
-    },
-    {
-      "ticket_id": "ticket_101",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "Shipping Options"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "Shipping",
-        "summary": "Customer requests information on available shipment options.",
-        "draft_reply": "Hi there! I'd be happy to help you explore the shipment options available for your order. We offer standard, expedited, and next‑day delivery, plus free shipping for orders over $50. If you let me know the destination zip code, I can provide the exact costs and estimated delivery dates. Please share the zip code or any preferences you have, and I'll get the details for you right away. Thank you for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 811.77,
-      "prompt_tokens": 683,
-      "completion_tokens": 422,
-      "cost_usd": 0.00017782
-    },
-    {
-      "ticket_id": "ticket_073",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "medium",
-        "product": "Payment Options"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know which payment options are accepted.",
-        "draft_reply": "Sure! We accept credit cards, debit cards, PayPal, Apple Pay, Google Pay, and bank transfers. Let me know if you need help setting up any of these."
-      },
-      "error": null,
-      "latency_ms": 976.79,
-      "prompt_tokens": 677,
-      "completion_tokens": 541,
-      "cost_usd": 0.00021308
-    },
-    {
-      "ticket_id": "ticket_194",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "newsletter",
-        "summary": "Customer requests cancellation of their newsletter subscription.",
-        "draft_reply": "Hi [Customer Name],\n\nThank you for reaching out. I’m sorry you’d like to unsubscribe from our newsletter. You can cancel your subscription by clicking the “Unsubscribe” link at the bottom of any of our emails, or by visiting your account settings here: [link]. If you need any further assistance, please let me know.\n\nBest regards,\n[Support Team]"
-      },
-      "error": null,
-      "latency_ms": 4129.98,
+      "latency_ms": 1707.72,
       "prompt_tokens": 679,
-      "completion_tokens": 1681,
-      "cost_usd": 0.00055522
+      "completion_tokens": 421,
+      "cost_usd": 0.00017722
     },
     {
-      "ticket_id": "ticket_118",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping Address"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer cannot set up a shipping address.",
-        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble adding a shipping address. Please try the following steps:\n1. Log in to your account and go to \"My Account\" → \"Addresses\".\n2. Click \"Add new address\" and fill in the required fields.\n3. Make sure the postal code matches the country and that all mandatory fields are completed.\nIf the problem persists, let us know the exact error message or screenshot, and we’ll investigate further.\n\nThank you for your patience!"
-      },
-      "error": null,
-      "latency_ms": 7842.38,
-      "prompt_tokens": 679,
-      "completion_tokens": 573,
-      "cost_usd": 0.00022283
-    },
-    {
-      "ticket_id": "ticket_192",
+      "ticket_id": "ticket_157",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
@@ -328,18 +52,18 @@
       "prediction": {
         "category": "PAYMENT",
         "priority": "low",
-        "product": "General",
-        "summary": "Customer requests a list of accepted payment options.",
-        "draft_reply": "Hi! We accept credit cards, debit cards, PayPal, Apple Pay, Google Pay, and bank transfers. Let me know if you need more details."
+        "product": "Payment methods",
+        "summary": "Customer wants to know which payment methods are allowed.",
+        "draft_reply": "Hi! Thanks for reaching out. We accept credit cards, debit cards, PayPal, and Apple Pay. If you need more details, let us know."
       },
       "error": null,
-      "latency_ms": 15880.2,
+      "latency_ms": 857.78,
       "prompt_tokens": 679,
-      "completion_tokens": 261,
-      "cost_usd": 0.00012922
+      "completion_tokens": 331,
+      "cost_usd": 0.00015023
     },
     {
-      "ticket_id": "ticket_053",
+      "ticket_id": "ticket_110",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
@@ -353,59 +77,82 @@
         "priority": "low",
         "product": "General",
         "summary": "Customer wants to speak with a human agent.",
-        "draft_reply": "Hi, thank you for reaching out. I’m happy to connect you with a live agent right away. Please hold while I transfer you."
+        "draft_reply": "Hi, I understand you'd like to speak with a human agent. You can reach us via the live chat icon in the top right corner or call our support line at 1-800-XXX-XXXX. If you prefer, let me know and I’ll connect you right away. Thank you for reaching out!"
       },
       "error": null,
-      "latency_ms": 5510.27,
-      "prompt_tokens": 679,
-      "completion_tokens": 269,
-      "cost_usd": 0.00013162
+      "latency_ms": 1136.39,
+      "prompt_tokens": 681,
+      "completion_tokens": 482,
+      "cost_usd": 0.00019567
     },
     {
-      "ticket_id": "ticket_003",
+      "ticket_id": "ticket_035",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
       "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Invoices"
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Corporate Newsletter"
       },
       "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Invoices",
-        "summary": "Customer wants to know where to download invoices.",
-        "draft_reply": "Hi, you can download invoices from your account dashboard under \"Billing\" > \"Invoices\". Let me know if you need further help."
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Corporate Newsletter",
+        "summary": "Customer wants to receive the corporate newsletter.",
+        "draft_reply": "Hello! I'd be happy to add you to our corporate newsletter. Please confirm your email address or let me know if you'd like to opt in. Thank you!"
       },
       "error": null,
-      "latency_ms": 345.14,
+      "latency_ms": 1085.46,
       "prompt_tokens": 682,
-      "completion_tokens": 259,
-      "cost_usd": 0.00012885
+      "completion_tokens": 709,
+      "cost_usd": 0.00026385
     },
     {
-      "ticket_id": "ticket_176",
+      "ticket_id": "ticket_195",
       "schema_valid": true,
       "category_correct": true,
-      "priority_correct": true,
+      "priority_correct": false,
       "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "Refund"
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Newsletter"
       },
       "prediction": {
-        "category": "REFUND",
+        "category": "SUBSCRIPTION",
         "priority": "high",
-        "product": "General",
-        "summary": "Customer wants to check the status of a refund",
-        "draft_reply": "Hi there,\n\nI’m sorry you’re waiting on your refund. You can view the current status by logging into your account, going to the \"Orders\" section, and selecting the relevant order. The refund will appear there once it’s processed. If you don’t see any update after 48 hours, please let us know and we’ll investigate further.\n\nThank you for your patience!"
+        "product": "Company newsletter subscription",
+        "summary": "Customer requests to cancel their company newsletter subscription.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. I’ve processed the cancellation of your company newsletter subscription. You will no longer receive any newsletters from us.\n\nIf you’d like to resubscribe in the future or have any other questions, please let me know and I’ll be happy to help.\n\nBest regards,\nCustomer Support"
       },
       "error": null,
-      "latency_ms": 502.17,
-      "prompt_tokens": 683,
-      "completion_tokens": 223,
-      "cost_usd": 0.00011812
+      "latency_ms": 1096.15,
+      "prompt_tokens": 678,
+      "completion_tokens": 581,
+      "cost_usd": 0.00022515
+    },
+    {
+      "ticket_id": "ticket_197",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks how to earn a product through the rewards program.",
+        "draft_reply": "Hi there,\n\nThank you for contacting us! To earn a product, you can participate in our rewards program by completing eligible actions such as making purchases, referring friends, or reviewing products. Once you accumulate enough points, you can redeem them for a free product. If you need step‑by‑step instructions or have any other questions, just let us know—we’re happy to help!\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 2031.82,
+      "prompt_tokens": 677,
+      "completion_tokens": 1340,
+      "cost_usd": 0.00045277
     },
     {
       "ticket_id": "ticket_056",
@@ -422,151 +169,82 @@
         "priority": "low",
         "product": "General",
         "summary": "Customer asks where to view withdrawal fees.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. You can view the withdrawal fee for any transaction in the \"Fees\" section of your account dashboard. Simply log in, go to Settings → Fees, and select the withdrawal you’re interested in. If you need further assistance, let us know and we’ll be happy to help!"
+        "draft_reply": "Hi there,\n\nThank you for reaching out. You can view the withdrawal charge by logging into your account and navigating to the \"Fees\" section in the dashboard, or by selecting the \"Withdrawal\" tab on the left menu. There you’ll see a detailed breakdown of all applicable fees.\n\nIf you need further assistance, feel free to let us know. We're happy to help!"
       },
       "error": null,
-      "latency_ms": 9518.79,
+      "latency_ms": 1102.39,
       "prompt_tokens": 678,
-      "completion_tokens": 344,
-      "cost_usd": 0.00015405
+      "completion_tokens": 359,
+      "cost_usd": 0.00015855
     },
     {
-      "ticket_id": "ticket_068",
+      "ticket_id": "ticket_010",
       "schema_valid": true,
       "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "Order Tracking"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to check the ETA for their order.",
-        "draft_reply": "Hi there,\n\nThanks for reaching out! To view the estimated delivery time for your order, simply log in to your account, go to \"My Orders,\" select the order in question, and click the \"Track Order\" button. This will show you the current status and the expected delivery date.\n\nIf you need any further assistance, feel free to let us know.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 793.1,
-      "prompt_tokens": 688,
-      "completion_tokens": 388,
-      "cost_usd": 0.000168
-    },
-    {
-      "ticket_id": "ticket_141",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "Shipping"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer requests shipping to a specific city.",
-        "draft_reply": "Thank you for reaching out. We can ship to {{Delivery City}}. Please confirm your address and we’ll provide an estimated delivery date."
-      },
-      "error": null,
-      "latency_ms": 830.78,
-      "prompt_tokens": 677,
-      "completion_tokens": 291,
-      "cost_usd": 0.00013808
-    },
-    {
-      "ticket_id": "ticket_198",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks for support hours.",
-        "draft_reply": "Thank you for contacting us. Our customer support team is available from 9 AM to 5 PM EST, Monday through Friday. If you need assistance outside those hours, please leave a message and we’ll get back to you within 24 hours."
-      },
-      "error": null,
-      "latency_ms": 626.87,
-      "prompt_tokens": 682,
-      "completion_tokens": 518,
-      "cost_usd": 0.00020655
-    },
-    {
-      "ticket_id": "ticket_070",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer requests to receive the company newsletter.",
-        "draft_reply": "Hi! Thank you for reaching out. I'd be happy to add you to our newsletter list. Please confirm your email address, and we'll send you the latest updates right away. Let me know if there's anything else I can help with!"
-      },
-      "error": null,
-      "latency_ms": 1545.15,
-      "prompt_tokens": 678,
-      "completion_tokens": 339,
-      "cost_usd": 0.00015255
-    },
-    {
-      "ticket_id": "ticket_195",
-      "schema_valid": true,
-      "category_correct": true,
       "priority_correct": false,
       "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General"
       },
       "prediction": {
         "category": "SUBSCRIPTION",
         "priority": "medium",
-        "product": "Newsletter subscription",
-        "summary": "Customer requests cancellation of their company newsletter subscription.",
-        "draft_reply": "Hi, I'm sorry to hear you want to cancel your company newsletter subscription. You can do so by logging into your account, going to the 'Subscriptions' section, and clicking 'Cancel Newsletter'. If you need further assistance, let me know. Thank you!"
+        "product": "Subscription",
+        "summary": "Customer wants to know the early exit penalty for their subscription.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. The early exit penalty for your subscription is $50, which covers the remaining 30 days of service. If you’d like to proceed with cancellation or need more details, please let us know and we’ll guide you through the process.\n\nBest regards,\nCustomer Support"
       },
       "error": null,
-      "latency_ms": 14186.63,
-      "prompt_tokens": 678,
-      "completion_tokens": 776,
-      "cost_usd": 0.00028365
+      "latency_ms": 538.09,
+      "prompt_tokens": 679,
+      "completion_tokens": 367,
+      "cost_usd": 0.00016102
     },
     {
-      "ticket_id": "ticket_092",
+      "ticket_id": "ticket_054",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "Order",
+        "summary": "Customer cannot complete payment for order {{Order Number}}.",
+        "draft_reply": "Hi {{Customer Name}},\n\nI’m sorry you’re having trouble paying for your order {{Order Number}}. Let’s get this sorted quickly. Please try the following:\n1. Check that your card details are correct and that the card has sufficient funds.\n2. If you’re using a digital wallet or a new card, try a different payment method.\n3. Clear your browser cache or try a different browser/device.\nIf the problem persists, let me know the exact error message you see, and I’ll investigate further.\n\nThank you for your patience.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 1103.87,
+      "prompt_tokens": 681,
+      "completion_tokens": 746,
+      "cost_usd": 0.00027487
+    },
+    {
+      "ticket_id": "ticket_003",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
       "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "Invoices"
       },
       "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants instructions on how to contact support.",
-        "draft_reply": "Hello! You can reach our customer assistance via phone at 1‑800‑123‑4567, email support@example.com, or the live chat button on our website. Let us know if you need further help!"
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "Invoices",
+        "summary": "Customer asks where to download invoices.",
+        "draft_reply": "Hello! You can download your invoices from the Billing section in your account dashboard. If you need further assistance, just let me know."
       },
       "error": null,
-      "latency_ms": 4616.9,
-      "prompt_tokens": 679,
-      "completion_tokens": 275,
-      "cost_usd": 0.00013343
+      "latency_ms": 5775.67,
+      "prompt_tokens": 682,
+      "completion_tokens": 345,
+      "cost_usd": 0.00015465
     },
     {
       "ticket_id": "ticket_004",
@@ -586,1482 +264,10 @@
         "draft_reply": "Hello,\n\nThank you for reaching out. You can view invoice #85632 by logging into your account and navigating to the \"Invoices\" section, then selecting the invoice number. If you need any further assistance, please let us know.\n\nBest regards,\nCustomer Support"
       },
       "error": null,
-      "latency_ms": 426.32,
+      "latency_ms": 502.87,
       "prompt_tokens": 683,
       "completion_tokens": 199,
       "cost_usd": 0.00011092
-    },
-    {
-      "ticket_id": "ticket_193",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "Delivery Options"
-      },
-      "prediction": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks if they can order from a specific delivery city.",
-        "draft_reply": "Sure! You can place an order from {{Delivery City}}. Please check our delivery coverage map or provide your address for confirmation. Let us know if you need any help."
-      },
-      "error": null,
-      "latency_ms": 9913.29,
-      "prompt_tokens": 680,
-      "completion_tokens": 304,
-      "cost_usd": 0.0001422
-    },
-    {
-      "ticket_id": "ticket_021",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer requests help locating invoice #00108.",
-        "draft_reply": "Hello,\n\nThank you for reaching out. I’m sorry you’re having trouble finding your invoice. Please try the following steps:\n1. Log in to your account and go to the \"Billing\" section.\n2. Search for invoice number 00108 in the list of recent invoices.\n3. If it’s not there, check your email inbox (including spam/junk) for the PDF attachment.\n\nIf you still can’t locate it, let me know and I’ll retrieve a copy for you right away.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 597.09,
-      "prompt_tokens": 680,
-      "completion_tokens": 340,
-      "cost_usd": 0.000153
-    },
-    {
-      "ticket_id": "ticket_122",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants instructions to sign up for the newsletter.",
-        "draft_reply": "Sure! To sign up for our newsletter, scroll to the bottom of any page, enter your email address, and click \"Subscribe\". If you need help, let us know!"
-      },
-      "error": null,
-      "latency_ms": 691.28,
-      "prompt_tokens": 678,
-      "completion_tokens": 330,
-      "cost_usd": 0.00014985
-    },
-    {
-      "ticket_id": "ticket_127",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "Shipping"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks if we ship to a specific city.",
-        "draft_reply": "Yes, we ship to {{Delivery City}}. If you need more details, let us know."
-      },
-      "error": null,
-      "latency_ms": 841.45,
-      "prompt_tokens": 679,
-      "completion_tokens": 339,
-      "cost_usd": 0.00015262
-    },
-    {
-      "ticket_id": "ticket_080",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "FEEDBACK",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer unsure how to file a claim",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. To file a claim, please log in to your account, go to the \"Claims\" section, and follow the step‑by‑step wizard. If you need any help, let us know and we’ll guide you through the process.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 666.54,
-      "prompt_tokens": 682,
-      "completion_tokens": 256,
-      "cost_usd": 0.00012795
-    },
-    {
-      "ticket_id": "ticket_180",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know customer service hours.",
-        "draft_reply": "Thank you for reaching out. Our customer service team is available Monday through Friday, 9 am to 5 pm EST. If you need assistance outside those hours, please leave a message and we’ll get back to you within 24 hours."
-      },
-      "error": null,
-      "latency_ms": 1046.48,
-      "prompt_tokens": 680,
-      "completion_tokens": 729,
-      "cost_usd": 0.0002697
-    },
-    {
-      "ticket_id": "ticket_185",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter",
-        "summary": "Customer wants to unsubscribe from the company newsletter.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. I’m sorry you’d like to stop receiving our newsletter. You can unsubscribe by clicking the \"Unsubscribe\" link at the bottom of any of our emails, or simply reply to this message with \"UNSUBSCRIBE\" and we’ll remove you from the list right away.\n\nIf you need any further assistance, please let us know.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 11806.82,
-      "prompt_tokens": 679,
-      "completion_tokens": 330,
-      "cost_usd": 0.00014992
-    },
-    {
-      "ticket_id": "ticket_079",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Request to receive notifications for sign-up issues.",
-        "draft_reply": "Hi there,\n\nThanks for reaching out! We can definitely set up notifications to alert you whenever a sign‑up issue occurs. Please let us know which channel you’d prefer (email, SMS, or in‑app) and any specific details you’d like included in the alert.\n\nOnce we have that information, we’ll configure the notification for you right away.\n\nIf you have any other questions or need further assistance, feel free to let us know.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 568.32,
-      "prompt_tokens": 681,
-      "completion_tokens": 267,
-      "cost_usd": 0.00013117
-    },
-    {
-      "ticket_id": "ticket_125",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "CANCEL",
-        "priority": "high",
-        "product": "Withdrawal"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "Withdrawal Fees",
-        "summary": "Customer requests information on withdrawal fees.",
-        "draft_reply": "Hi there! I’d be happy to help you with that. Our standard withdrawal fee is $5 per transaction, but if you’re using a bank transfer it’s free. If you’d like a detailed breakdown or have a specific account in mind, just let me know and I’ll provide the exact figures. Thanks for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 749.54,
-      "prompt_tokens": 679,
-      "completion_tokens": 425,
-      "cost_usd": 0.00017842
-    },
-    {
-      "ticket_id": "ticket_178",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "Payments"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know where to report online payment issues.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. If you’re experiencing problems with online payments, please contact our payment support team at paymentsupport@example.com or submit a ticket through the Help Center under \"Payments\". They’ll be happy to assist you promptly.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 634.13,
-      "prompt_tokens": 680,
-      "completion_tokens": 280,
-      "cost_usd": 0.000135
-    },
-    {
-      "ticket_id": "ticket_169",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "Shipping Options"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "Shipping",
-        "summary": "Customer requests information on available shipment methods.",
-        "draft_reply": "Hello! I'd be happy to help you with that. We currently offer standard, expedited, and overnight shipping options. Standard shipping takes 3–5 business days, expedited takes 1–2 days, and overnight delivers the next business day. If you need a specific delivery time or have any other preferences, just let me know and I can guide you through the selection process. Thank you!"
-      },
-      "error": null,
-      "latency_ms": 1057.18,
-      "prompt_tokens": 677,
-      "completion_tokens": 464,
-      "cost_usd": 0.00018997
-    },
-    {
-      "ticket_id": "ticket_191",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to contact an agent.",
-        "draft_reply": "Sure, I'd be happy to connect you with an agent. Please let me know your preferred contact method or I can arrange a call."
-      },
-      "error": null,
-      "latency_ms": 2787.52,
-      "prompt_tokens": 676,
-      "completion_tokens": 346,
-      "cost_usd": 0.0001545
-    },
-    {
-      "ticket_id": "ticket_139",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "FEEDBACK",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "FEEDBACK",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks for address to submit a comment for a product.",
-        "draft_reply": "Thank you for reaching out! You can submit product feedback by emailing feedback@example.com or using the feedback form on our website. Let us know if you need further assistance."
-      },
-      "error": null,
-      "latency_ms": 1628.99,
-      "prompt_tokens": 683,
-      "completion_tokens": 287,
-      "cost_usd": 0.00013732
-    },
-    {
-      "ticket_id": "ticket_117",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "Delivery Options"
-      },
-      "prediction": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to place an order from a specific city.",
-        "draft_reply": "Sure, you can place an order from {{Delivery City}}. Please visit our website or app, select the city, and follow the checkout steps. Let us know if you need any assistance!"
-      },
-      "error": null,
-      "latency_ms": 455.03,
-      "prompt_tokens": 682,
-      "completion_tokens": 229,
-      "cost_usd": 0.00011985
-    },
-    {
-      "ticket_id": "ticket_188",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks when they can request a refund.",
-        "draft_reply": "Hi there! I’m happy to help you understand our refund policy. You can request a refund within 30 days of purchase if the product is unused, in original condition, and you have the receipt. If you’re outside that window or the item is damaged, let me know and we’ll see what options are available. Please provide your order number and any details about the issue, and I’ll guide you through the next steps. Thank you for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 6024.59,
-      "prompt_tokens": 682,
-      "completion_tokens": 832,
-      "cost_usd": 0.00030075
-    },
-    {
-      "ticket_id": "ticket_045",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Newsletter"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know how to subscribe to the newsletter.",
-        "draft_reply": "Hi there! To receive our newsletter, simply go to the bottom of any page on our website, enter your email address in the subscription box, and click \"Subscribe.\" If you need further assistance, let us know!"
-      },
-      "error": null,
-      "latency_ms": 11721.87,
-      "prompt_tokens": 683,
-      "completion_tokens": 242,
-      "cost_usd": 0.00012382
-    },
-    {
-      "ticket_id": "ticket_005",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "Payment Options"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know how to view accepted payment methods.",
-        "draft_reply": "Hi there,\n\nThanks for reaching out! To see the payment methods we accept, log in to your account, go to \"Settings\" → \"Payment Options,\" and you’ll find a list of all available methods. If you need further assistance or have any other questions, just let us know.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 1749.51,
-      "prompt_tokens": 680,
-      "completion_tokens": 296,
-      "cost_usd": 0.0001398
-    },
-    {
-      "ticket_id": "ticket_081",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "ORDER",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks where to purchase several products.",
-        "draft_reply": "Thank you for reaching out! You can purchase our products directly from our website at www.example.com, through our mobile app, or at authorized retailers listed on our store locator page. If you need help finding a specific product or retailer, let us know and we’ll gladly assist you further."
-      },
-      "error": null,
-      "latency_ms": 524.03,
-      "prompt_tokens": 677,
-      "completion_tokens": 374,
-      "cost_usd": 0.00016297
-    },
-    {
-      "ticket_id": "ticket_174",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "high",
-        "product": "Order"
-      },
-      "prediction": {
-        "category": "CANCEL",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer requests cancellation of an order.",
-        "draft_reply": "Hello, I'm sorry you need to cancel your order. Please provide the order number and I will process the cancellation promptly."
-      },
-      "error": null,
-      "latency_ms": 599.28,
-      "prompt_tokens": 679,
-      "completion_tokens": 340,
-      "cost_usd": 0.00015292
-    },
-    {
-      "ticket_id": "ticket_134",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer is unable to create an account.",
-        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble creating an account. Let’s try a few quick steps:\n1. Make sure you’re using a supported browser (Chrome, Firefox, Safari) and that JavaScript is enabled.\n2. Clear your browser cache or try the sign‑up page in an incognito/private window.\n3. Double‑check that the email address and password meet the required format.\n4. If you see an error message, please let me know the exact wording.\n\nIf the problem persists after these steps, reply to this ticket or call our support line at 1‑800‑123‑4567 and we’ll investigate further.\n\nThank you for your patience!"
-      },
-      "error": null,
-      "latency_ms": 827.73,
-      "prompt_tokens": 675,
-      "completion_tokens": 591,
-      "cost_usd": 0.00022792
-    },
-    {
-      "ticket_id": "ticket_099",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Standard account"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to delete their standard account.",
-        "draft_reply": "Hi,\n\nI’m sorry to hear you’d like to remove your standard account. To delete it, log in, go to Settings > Account > Delete Account, confirm the action, and you’ll receive a confirmation email.\n\nIf you run into any issues or need further assistance, please let us know. Thank you!"
-      },
-      "error": null,
-      "latency_ms": 4016.74,
-      "prompt_tokens": 683,
-      "completion_tokens": 579,
-      "cost_usd": 0.00022493
-    },
-    {
-      "ticket_id": "ticket_181",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know how to check their bill #00108.",
-        "draft_reply": "Hi, thanks for reaching out. To view bill #00108, log into your account, go to the Billing section, and click 'View Invoice'. Let me know if you need further help."
-      },
-      "error": null,
-      "latency_ms": 10191.83,
-      "prompt_tokens": 685,
-      "completion_tokens": 608,
-      "cost_usd": 0.00023378
-    },
-    {
-      "ticket_id": "ticket_096",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer requests to modify their address.",
-        "draft_reply": "Hello! I’m happy to help you update your address. Please log in to your account, navigate to Settings → Address, and enter the new details. If you prefer, let me know the new address here and I’ll update it for you. Let me know if you need any further assistance!"
-      },
-      "error": null,
-      "latency_ms": 923.55,
-      "prompt_tokens": 677,
-      "completion_tokens": 467,
-      "cost_usd": 0.00019087
-    },
-    {
-      "ticket_id": "ticket_189",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "CANCEL",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CANCEL",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to check cancellation charges.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. To view your cancellation charges, log in to your account, go to the Orders section, select the relevant order, and click on \"Cancellation Details\". If you need further assistance, let us know.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 1051.46,
-      "prompt_tokens": 682,
-      "completion_tokens": 691,
-      "cost_usd": 0.00025845
-    },
-    {
-      "ticket_id": "ticket_076",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer requests to check bill #37777.",
-        "draft_reply": "Hello! I’m happy to help you with bill #37777. I’m pulling up the details now—please hold on for a moment. Once I have the information, I’ll share the invoice summary and any relevant payment options. If you have any additional questions, feel free to let me know."
-      },
-      "error": null,
-      "latency_ms": 11847.84,
-      "prompt_tokens": 675,
-      "completion_tokens": 503,
-      "cost_usd": 0.00020152
-    },
-    {
-      "ticket_id": "ticket_121",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know estimated shipping time for their order.",
-        "draft_reply": "Hi there, thanks for reaching out. Shipping typically takes 3-5 business days. Please share your order number so we can confirm the exact ETA. Let us know if you need anything else."
-      },
-      "error": null,
-      "latency_ms": 6813.22,
-      "prompt_tokens": 684,
-      "completion_tokens": 432,
-      "cost_usd": 0.0001809
-    },
-    {
-      "ticket_id": "ticket_084",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer requests compensation for an issue.",
-        "draft_reply": "Hello, thank you for reaching out. I’m sorry to hear you’re seeking compensation. Could you please share the order number or details of the issue so we can review your request and process a suitable resolution? We’ll get back to you promptly. Thank you for your patience."
-      },
-      "error": null,
-      "latency_ms": 532.33,
-      "prompt_tokens": 678,
-      "completion_tokens": 419,
-      "cost_usd": 0.00017655
-    },
-    {
-      "ticket_id": "ticket_022",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "Payment methods"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know what payment methods are available.",
-        "draft_reply": "Hello! Thank you for reaching out. We currently accept major credit cards (Visa, MasterCard, American Express), PayPal, Apple Pay, and Google Pay. If you need any further assistance or have a specific method in mind, please let us know and we’ll be happy to help!"
-      },
-      "error": null,
-      "latency_ms": 4829.66,
-      "prompt_tokens": 674,
-      "completion_tokens": 214,
-      "cost_usd": 0.00011475
-    },
-    {
-      "ticket_id": "ticket_111",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Invoices",
-        "summary": "Customer requests help downloading invoices for a specific person.",
-        "draft_reply": "Hi there! I’m sorry you’re having trouble downloading invoices. Please log into your account, navigate to the Billing section, click on the \"Invoices\" tab, and select the date range you need. Once the list appears, click the download icon next to each invoice. If you still can’t see the invoices or encounter an error, let me know and I’ll investigate further. Thank you!"
-      },
-      "error": null,
-      "latency_ms": 1211.53,
-      "prompt_tokens": 682,
-      "completion_tokens": 768,
-      "cost_usd": 0.00028155
-    },
-    {
-      "ticket_id": "ticket_037",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer requests help to communicate with an assistant.",
-        "draft_reply": "Hello! I'm here to help you get in touch with an assistant. Could you let me know what you'd like to discuss or any specific issue you're facing? Once I have a bit more detail, I can guide you through the next steps."
-      },
-      "error": null,
-      "latency_ms": 918.36,
-      "prompt_tokens": 676,
-      "completion_tokens": 761,
-      "cost_usd": 0.000279
-    },
-    {
-      "ticket_id": "ticket_098",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer wants to know the refund eligibility criteria.",
-        "draft_reply": "Hi there! I’m happy to help you understand our refund policy. Refunds are available for items that are unused, in original packaging, and within 30 days of purchase. If you have a specific order in mind, please share the order number and I can check the status for you. Let me know if you’d like a link to the full policy or any other assistance. Thanks!"
-      },
-      "error": null,
-      "latency_ms": 11822.31,
-      "prompt_tokens": 683,
-      "completion_tokens": 536,
-      "cost_usd": 0.00021203
-    },
-    {
-      "ticket_id": "ticket_007",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know expected delivery time for their purchase.",
-        "draft_reply": "Hi, thanks for reaching out! Your order is on its way. Typically, deliveries take 3–5 business days. If you share your order number, we can give you a precise ETA. Let us know if you need anything else."
-      },
-      "error": null,
-      "latency_ms": 843.64,
-      "prompt_tokens": 677,
-      "completion_tokens": 497,
-      "cost_usd": 0.00019988
-    },
-    {
-      "ticket_id": "ticket_058",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks how to subscribe to the newsletter.",
-        "draft_reply": "Thank you for reaching out! To subscribe to our newsletter, simply visit our website, scroll to the footer, and enter your email address in the subscription box. If you need further assistance, let us know."
-      },
-      "error": null,
-      "latency_ms": 3673.47,
-      "prompt_tokens": 679,
-      "completion_tokens": 421,
-      "cost_usd": 0.00017722
-    },
-    {
-      "ticket_id": "ticket_051",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "FEEDBACK",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "FEEDBACK",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to lodge a claim due to dissatisfaction with work.",
-        "draft_reply": "Hi [Name],\n\nI’m sorry to hear you’re unhappy with the work. To file a claim, please visit our Claims page at https://example.com/claims, fill out the form, and attach any relevant details. If you need assistance, let me know and I’ll guide you through the process.\n\nThank you for bringing this to our attention."
-      },
-      "error": null,
-      "latency_ms": 3261.48,
-      "prompt_tokens": 682,
-      "completion_tokens": 702,
-      "cost_usd": 0.00026175
-    },
-    {
-      "ticket_id": "ticket_034",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer paid an amount and requests a refund for their order.",
-        "draft_reply": "Hello,\n\nThank you for reaching out. I’m sorry to hear you’re looking for a refund. Please provide your order number and the payment reference so we can locate the transaction and process the refund promptly. Once we have those details, we’ll confirm the refund amount and the expected time frame for the funds to appear in your account.\n\nThank you for your patience, and let me know if there’s anything else I can help with."
-      },
-      "error": null,
-      "latency_ms": 1740.3,
-      "prompt_tokens": 689,
-      "completion_tokens": 302,
-      "cost_usd": 0.00014228
-    },
-    {
-      "ticket_id": "ticket_146",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "high",
-        "product": "Order"
-      },
-      "prediction": {
-        "category": "ORDER",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer wants to correct a mistake in their order.",
-        "draft_reply": "Hi,\n\nThank you for reaching out. We’re happy to help you correct your order. Please let us know the specific changes you’d like to make, and we’ll update it for you right away. If you need any further assistance, just let us know.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 4459.4,
-      "prompt_tokens": 684,
-      "completion_tokens": 286,
-      "cost_usd": 0.0001371
-    },
-    {
-      "ticket_id": "ticket_069",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know where to access their bills.",
-        "draft_reply": "Hi {{Person Name}}, you can view and download your bills in the Billing section of your account dashboard. If you need further assistance, let us know."
-      },
-      "error": null,
-      "latency_ms": 493.96,
-      "prompt_tokens": 682,
-      "completion_tokens": 205,
-      "cost_usd": 0.00011265
-    },
-    {
-      "ticket_id": "ticket_197",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks how to earn a product through the rewards program.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out! To earn a product, you can participate in our rewards program by completing eligible actions such as making purchases, referring friends, or reviewing products. Once you accumulate enough points, you can redeem them for a product. If you need step‑by‑step instructions, let us know and we’ll guide you through the process.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 6599.41,
-      "prompt_tokens": 677,
-      "completion_tokens": 1267,
-      "cost_usd": 0.00043087
-    },
-    {
-      "ticket_id": "ticket_171",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Invoice"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Invoice",
-        "summary": "Customer requests instructions to download bill #85632.",
-        "draft_reply": "Hello,\n\nThank you for reaching out. To download bill #85632, log into your account, navigate to the Billing section, locate the bill in the list, and click the 'Download' icon next to it. If you need further assistance, let us know.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 902.92,
-      "prompt_tokens": 684,
-      "completion_tokens": 583,
-      "cost_usd": 0.0002262
-    },
-    {
-      "ticket_id": "ticket_177",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Corporate Newsletter",
-        "summary": "Customer wants help subscribing to the corporate newsletter.",
-        "draft_reply": "Hello! I'd be happy to help you subscribe to our corporate newsletter. Please provide your email address or click the link below to complete the subscription. If you encounter any issues, let me know and I'll assist further. Thank you!"
-      },
-      "error": null,
-      "latency_ms": 951.79,
-      "prompt_tokens": 678,
-      "completion_tokens": 500,
-      "cost_usd": 0.00020085
-    },
-    {
-      "ticket_id": "ticket_123",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer asks how long shipping takes for product arrival.",
-        "draft_reply": "Thank you for reaching out! Shipping times vary by location, but most orders arrive within 3–5 business days. If you need a more precise estimate, let us know your shipping address and we’ll provide an exact delivery window."
-      },
-      "error": null,
-      "latency_ms": 629.67,
-      "prompt_tokens": 681,
-      "completion_tokens": 479,
-      "cost_usd": 0.00019478
-    },
-    {
-      "ticket_id": "ticket_184",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer requests reimbursement of {{Refund Amount}} dollars.",
-        "draft_reply": "Thank you for contacting us. We understand you are expecting a reimbursement of {{Refund Amount}} dollars. Our team will review your request and get back to you within 2 business days. If you have any additional information, please let us know."
-      },
-      "error": null,
-      "latency_ms": 6982.62,
-      "prompt_tokens": 680,
-      "completion_tokens": 580,
-      "cost_usd": 0.000225
-    },
-    {
-      "ticket_id": "ticket_039",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping Address"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know how to add a secondary delivery address.",
-        "draft_reply": "Hi there,\n\nYou can add a secondary delivery address by logging into your account, navigating to \"Account Settings\" → \"Addresses\", and clicking \"Add New Address.\" Once saved, simply select that address when you place or edit an order.\n\nIf you run into any trouble, let us know and we’ll be happy to help!"
-      },
-      "error": null,
-      "latency_ms": 2582.59,
-      "prompt_tokens": 679,
-      "completion_tokens": 462,
-      "cost_usd": 0.00018953
-    },
-    {
-      "ticket_id": "ticket_002",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know customer service hours.",
-        "draft_reply": "Thank you for reaching out. Our customer service team is available Monday through Friday from 9 am to 6 pm EST. If you need assistance outside those hours, please email support@example.com and we’ll get back to you within 24 hours."
-      },
-      "error": null,
-      "latency_ms": 644.97,
-      "prompt_tokens": 681,
-      "completion_tokens": 415,
-      "cost_usd": 0.00017557
-    },
-    {
-      "ticket_id": "ticket_131",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "Reimbursement Policy"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to view the reimbursement policy.",
-        "draft_reply": "Hello! Thank you for reaching out. You can view our full reimbursement policy by visiting the \"Refunds & Reimbursements\" section on our website or by clicking this link: https://www.example.com/reimbursement-policy. If you have any further questions, feel free to let us know!"
-      },
-      "error": null,
-      "latency_ms": 506.71,
-      "prompt_tokens": 678,
-      "completion_tokens": 229,
-      "cost_usd": 0.00011955
-    },
-    {
-      "ticket_id": "ticket_107",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "Billing"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer requests to view bill #12588.",
-        "draft_reply": "Sure! To view bill #12588, log into your account, go to the Billing section, and click on the bill number. If you need further assistance, let us know."
-      },
-      "error": null,
-      "latency_ms": 569.41,
-      "prompt_tokens": 679,
-      "completion_tokens": 304,
-      "cost_usd": 0.00014212
-    },
-    {
-      "ticket_id": "ticket_016",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "Refund"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer requests a refund of {{Refund Amount}} dollars.",
-        "draft_reply": "Hi,\n\nI’m sorry you’re experiencing this issue. Please provide your order number and the exact amount you’d like refunded, and we’ll process it promptly.\n\nThank you for your patience."
-      },
-      "error": null,
-      "latency_ms": 5625.95,
-      "prompt_tokens": 680,
-      "completion_tokens": 222,
-      "cost_usd": 0.0001176
-    },
-    {
-      "ticket_id": "ticket_042",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account Category"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account Category",
-        "summary": "Customer requests to modify their account category.",
-        "draft_reply": "Hello! I understand you’d like to change your account category. Please let me know the new category you’d like to set, or I can walk you through the steps to update it in your profile. Let me know how you’d like to proceed."
-      },
-      "error": null,
-      "latency_ms": 511.71,
-      "prompt_tokens": 676,
-      "completion_tokens": 429,
-      "cost_usd": 0.0001794
-    },
-    {
-      "ticket_id": "ticket_182",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to know customer service hours.",
-        "draft_reply": "Thank you for reaching out. Our customer service is available Monday through Friday, 9 am to 6 pm EST. Let us know if you need anything else."
-      },
-      "error": null,
-      "latency_ms": 2617.27,
-      "prompt_tokens": 681,
-      "completion_tokens": 358,
-      "cost_usd": 0.00015847
-    },
-    {
-      "ticket_id": "ticket_061",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account",
-        "summary": "Customer wants to update their shipping address.",
-        "draft_reply": "Sure, I can help you update your address. Please log into your account, go to Settings > Address Book, edit the address, and save. If you need further assistance, let me know."
-      },
-      "error": null,
-      "latency_ms": 5697.1,
-      "prompt_tokens": 680,
-      "completion_tokens": 561,
-      "cost_usd": 0.0002193
-    },
-    {
-      "ticket_id": "ticket_158",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer requests to swap items from a recent purchase.",
-        "draft_reply": "Hi,\n\nThank you for reaching out. To swap items from your recent order, please let us know which items you’d like to exchange and we’ll guide you through the process. If you need any assistance, feel free to reply or call our support team.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 3637.43,
-      "prompt_tokens": 683,
-      "completion_tokens": 327,
-      "cost_usd": 0.00014932
-    },
-    {
-      "ticket_id": "ticket_091",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Pro Account"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "Pro Account",
-        "summary": "Customer requests assistance to open a Pro account.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out! I’d be happy to help you upgrade to a Pro account.\n\n1. Log in to your account on our website.\n2. Go to the \"Upgrade\" section in your dashboard.\n3. Select the Pro plan and follow the payment steps.\n4. Once payment is confirmed, your Pro account will be activated.\n\nIf you encounter any issues or need further assistance, please let me know and I’ll guide you through the process.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 639.16,
-      "prompt_tokens": 685,
-      "completion_tokens": 378,
-      "cost_usd": 0.00016478
-    },
-    {
-      "ticket_id": "ticket_083",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "CANCEL",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "medium",
-        "product": "Early Exit Charges",
-        "summary": "Customer wants to view early exit charges.",
-        "draft_reply": "Hi, thank you for reaching out. You can view your early exit charges by logging into your account and navigating to the Billing section under Subscription Details. If you need further assistance, please let us know."
-      },
-      "error": null,
-      "latency_ms": 689.44,
-      "prompt_tokens": 682,
-      "completion_tokens": 310,
-      "cost_usd": 0.00014415
-    },
-    {
-      "ticket_id": "ticket_008",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "FEEDBACK",
-        "priority": "low",
-        "product": "Claims"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to file a claim.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. To file a claim, please log in to your account, go to the \"Orders\" section, select the order in question, and click the \"File a Claim\" button. If you need further assistance, let us know and we’ll guide you through the process.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 665.44,
-      "prompt_tokens": 683,
-      "completion_tokens": 292,
-      "cost_usd": 0.00013882
-    },
-    {
-      "ticket_id": "ticket_077",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know expected delivery time for their parcel.",
-        "draft_reply": "Hi there,\n\nThank you for reaching out. I’m happy to help you track your shipment. Please provide your order number or the tracking number you received, and I’ll look up the current status and estimated delivery date for you.\n\nIf you already have a tracking number, you can also check the carrier’s website directly for the most up-to-date information.\n\nLet me know if there’s anything else I can assist with!\n\nBest regards,\n[Your Name]"
-      },
-      "error": null,
-      "latency_ms": 1135.6,
-      "prompt_tokens": 681,
-      "completion_tokens": 986,
-      "cost_usd": 0.00034687
-    },
-    {
-      "ticket_id": "ticket_186",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General",
-        "summary": "Customer requests compensation of {{Currency Symbol}}{{Refund Amount}}.",
-        "draft_reply": "Hi [Customer Name], I'm sorry to hear you're upset. I understand you’re requesting compensation of {{Currency Symbol}}{{Refund Amount}}. To process this, could you please provide your order number and any relevant details? We’ll review your case promptly and get back to you within 24 hours. Thank you for your patience."
-      },
-      "error": null,
-      "latency_ms": 9564.06,
-      "prompt_tokens": 683,
-      "completion_tokens": 379,
-      "cost_usd": 0.00016493
-    },
-    {
-      "ticket_id": "ticket_119",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "SHIPPING",
-        "priority": "medium",
-        "product": "Shipping Address"
-      },
-      "prediction": {
-        "category": "SHIPPING",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer needs help entering a secondary shipping address.",
-        "draft_reply": "Hi there,\nI’m happy to help you add a secondary shipping address. Log in to your account, go to the “Addresses” section, click “Add new address,” and fill in the details. If you’re using the mobile app, tap the profile icon, select “Address book,” then “Add address.” Once saved, you can choose it during checkout.\n\nLet me know if you run into any issues!\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 1042.42,
-      "prompt_tokens": 682,
-      "completion_tokens": 831,
-      "cost_usd": 0.00030045
-    },
-    {
-      "ticket_id": "ticket_057",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "ORDER",
-        "priority": "medium",
-        "product": "Order",
-        "summary": "Customer requests to view the status of a specific order.",
-        "draft_reply": "Hi there,\n\nThanks for reaching out! You can check the status of your order by logging into your account and going to the \"Orders\" section. If you’d like, just let us know the order number and we’ll look it up for you right away.\n\nBest regards,\nCustomer Support"
-      },
-      "error": null,
-      "latency_ms": 458.97,
-      "prompt_tokens": 682,
-      "completion_tokens": 346,
-      "cost_usd": 0.00015495
-    },
-    {
-      "ticket_id": "ticket_075",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "INVOICE",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Request for an invoice from a specific person.",
-        "draft_reply": "Sure, I can help you retrieve the invoice. Please provide the person's name and the invoice number or date so I can locate it for you."
-      },
-      "error": null,
-      "latency_ms": 1748.3,
-      "prompt_tokens": 677,
-      "completion_tokens": 332,
-      "cost_usd": 0.00015037
-    },
-    {
-      "ticket_id": "ticket_032",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CONTACT",
-        "priority": "low",
-        "product": "General",
-        "summary": "Customer wants to speak with customer assistance.",
-        "draft_reply": "Hi, thank you for reaching out. You can contact our customer assistance team by phone at 1-800-123-4567 or via live chat on our website. Let us know if you need anything else."
-      },
-      "error": null,
-      "latency_ms": 1638.69,
-      "prompt_tokens": 678,
-      "completion_tokens": 464,
-      "cost_usd": 0.00019005
-    },
-    {
-      "ticket_id": "ticket_168",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Gold account"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Gold account",
-        "summary": "Customer requests assistance opening a gold account.",
-        "draft_reply": "Hello! I'd be happy to help you open a Gold account. Please provide your full name, email, and a valid phone number, or click the link below to start the application. Once we receive your details, we’ll guide you through the next steps. Let me know if you need any additional information."
-      },
-      "error": null,
-      "latency_ms": 8737.16,
-      "prompt_tokens": 679,
-      "completion_tokens": 520,
-      "cost_usd": 0.00020692
-    },
-    {
-      "ticket_id": "ticket_001",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "SUBSCRIPTION",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "CANCEL",
-        "priority": "low",
-        "product": "Newsletter",
-        "summary": "Customer wants to cancel their newsletter subscription.",
-        "draft_reply": "Hi there,\n\nI’m sorry you’re looking to unsubscribe from our newsletter. You can cancel it in a few easy steps:\n1. Log in to your account on our website.\n2. Go to Settings → Newsletter Preferences.\n3. Toggle the subscription off or click the “Unsubscribe” button.\n\nIf you can’t find the option or prefer a direct link, just reply to this email and we’ll remove you immediately.\n\nThank you for staying with us, and we’re sorry to see you go.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 1075.12,
-      "prompt_tokens": 683,
-      "completion_tokens": 788,
-      "cost_usd": 0.00028762
-    },
-    {
-      "ticket_id": "ticket_047",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "REFUND",
-        "priority": "high",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "REFUND",
-        "priority": "medium",
-        "product": "General",
-        "summary": "Customer wants to know the conditions for requesting refunds.",
-        "draft_reply": "Hello! I’m happy to help explain our refund policy. You can request a refund within 30 days of purchase if the item is unused, in original condition, and you have the receipt. If you’re unsure or need a refund for a specific order, just let us know the order number and we’ll guide you through the process. Thank you for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 7041.11,
-      "prompt_tokens": 680,
-      "completion_tokens": 439,
-      "cost_usd": 0.0001827
-    },
-    {
-      "ticket_id": "ticket_114",
-      "schema_valid": true,
-      "category_correct": false,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "CANCEL",
-        "priority": "high",
-        "product": "Early Exit Penalty"
-      },
-      "prediction": {
-        "category": "SUBSCRIPTION",
-        "priority": "medium",
-        "product": "Early Exit Penalty",
-        "summary": "Customer wants to know how to check the early exit penalty.",
-        "draft_reply": "Hi,\n\nThank you for reaching out. To view your early exit penalty, log into your account, navigate to the Subscription tab, and click on \"Penalty Details\". If you need further assistance, just let us know and we’ll be happy to help."
-      },
-      "error": null,
-      "latency_ms": 640.64,
-      "prompt_tokens": 681,
-      "completion_tokens": 384,
-      "cost_usd": 0.00016627
     },
     {
       "ticket_id": "ticket_173",
@@ -2081,36 +287,36 @@
         "draft_reply": "Sure, we can help you update your gold account details. Please let us know which fields you’d like to change or provide the new information, and we’ll guide you through the process."
       },
       "error": null,
-      "latency_ms": 2352.49,
+      "latency_ms": 1635.87,
       "prompt_tokens": 675,
       "completion_tokens": 209,
       "cost_usd": 0.00011333
     },
     {
-      "ticket_id": "ticket_120",
+      "ticket_id": "ticket_103",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
       "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "urgent",
+        "category": "REFUND",
+        "priority": "high",
         "product": "General"
       },
       "prediction": {
-        "category": "PAYMENT",
-        "priority": "urgent",
+        "category": "REFUND",
+        "priority": "high",
         "product": "General",
-        "summary": "Customer reports payment problems.",
-        "draft_reply": "Hi, I'm sorry to hear you're having trouble with your payment. Could you please share the error message or the last step you reached? We'll resolve it promptly."
+        "summary": "Customer requests a refund for their money.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. I’m sorry to hear you’d like a refund. Please provide your order number and the reason for the refund, and we’ll process it promptly.\n\nBest regards,\nSupport Team"
       },
       "error": null,
-      "latency_ms": 290.53,
-      "prompt_tokens": 681,
-      "completion_tokens": 227,
-      "cost_usd": 0.00011917
+      "latency_ms": 13700.67,
+      "prompt_tokens": 682,
+      "completion_tokens": 552,
+      "cost_usd": 0.00021675
     },
     {
-      "ticket_id": "ticket_151",
+      "ticket_id": "ticket_147",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
@@ -2123,83 +329,37 @@
         "category": "SHIPPING",
         "priority": "medium",
         "product": "Shipping Address",
-        "summary": "Customer cannot edit their delivery address.",
-        "draft_reply": "Hi [Name],\n\nI’m sorry you’re having trouble updating your delivery address. Let’s try a few quick steps:\n1. Clear your browser cache or try a different browser.\n2. Make sure you’re logged into the correct account.\n3. If the issue persists, use the \"Edit address\" link on the order page or contact us directly at support@example.com.\n\nWe’re here to help—please let us know if this resolves the problem or if you need further assistance.\n\nBest regards,\nCustomer Support"
+        "summary": "Customer wants to change shipping address after placing an order.",
+        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble with the shipping address. If the order hasn’t shipped yet, you can update the address by logging into your account, going to \"My Orders\", selecting the relevant order, and clicking \"Edit Shipping Address\". If the order has already shipped, please let us know the order number and we’ll see what can be done.\n\nThank you for reaching out, and we’re happy to help!"
       },
       "error": null,
-      "latency_ms": 2661.93,
-      "prompt_tokens": 679,
-      "completion_tokens": 1228,
-      "cost_usd": 0.00041932
+      "latency_ms": 632.8,
+      "prompt_tokens": 683,
+      "completion_tokens": 356,
+      "cost_usd": 0.00015803
     },
     {
-      "ticket_id": "ticket_050",
+      "ticket_id": "ticket_028",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
       "ground_truth": {
-        "category": "FEEDBACK",
+        "category": "CONTACT",
         "priority": "low",
         "product": "General"
       },
       "prediction": {
-        "category": "FEEDBACK",
+        "category": "CONTACT",
         "priority": "low",
         "product": "General",
-        "summary": "Customer wants to write a review for a product.",
-        "draft_reply": "Thank you for reaching out! We'd love to hear your thoughts. Please visit our product page and click \"Write a Review\" to share your opinion."
+        "summary": "Customer asks for support hours.",
+        "draft_reply": "Hello! Our customer support team is available Monday through Friday from 9 AM to 6 PM EST. If you need assistance outside those hours, feel free to leave a message and we’ll get back to you as soon as possible. Thank you!"
       },
       "error": null,
-      "latency_ms": 8196.25,
-      "prompt_tokens": 680,
-      "completion_tokens": 413,
-      "cost_usd": 0.0001749
-    },
-    {
-      "ticket_id": "ticket_023",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "PAYMENT",
-        "priority": "urgent",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "PAYMENT",
-        "priority": "urgent",
-        "product": "General",
-        "summary": "Customer reports a payment issue.",
-        "draft_reply": "Hello,\n\nThank you for reaching out. I'm sorry to hear you're experiencing a payment problem. Could you please provide the transaction ID and the error message you received? This will help us investigate and resolve the issue promptly.\n\nThank you for your patience.\n\nBest regards,\nSupport Team"
-      },
-      "error": null,
-      "latency_ms": 1900.54,
-      "prompt_tokens": 679,
-      "completion_tokens": 443,
-      "cost_usd": 0.00018382
-    },
-    {
-      "ticket_id": "ticket_130",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account Type"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "low",
-        "product": "Account Type",
-        "summary": "Customer asks how to use the Account Type account.",
-        "draft_reply": "Hi there! I'd be happy to help you get started with your Account Type account. First, log in to your dashboard, then navigate to the 'Account Settings' tab where you can customize your preferences. If you need more detailed guidance, let me know and I can walk you through each step. Thanks for reaching out!"
-      },
-      "error": null,
-      "latency_ms": 6171.68,
-      "prompt_tokens": 680,
-      "completion_tokens": 765,
-      "cost_usd": 0.0002805
+      "latency_ms": 10604.89,
+      "prompt_tokens": 681,
+      "completion_tokens": 344,
+      "cost_usd": 0.00015427
     },
     {
       "ticket_id": "ticket_135",
@@ -2219,10 +379,700 @@
         "draft_reply": "Hello,\n\nThank you for reaching out. To create a new account category, please log in to your dashboard, navigate to \"Account Settings,\" and click \"Add Category.\" If you encounter any issues or need further assistance, let us know and we’ll be happy to help.\n\nBest regards,\nSupport Team"
       },
       "error": null,
-      "latency_ms": 4556.09,
+      "latency_ms": 723.33,
       "prompt_tokens": 677,
       "completion_tokens": 275,
       "cost_usd": 0.00013328
+    },
+    {
+      "ticket_id": "ticket_088",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer requests assistance filing a reclamation.",
+        "draft_reply": "Hi there,\n\nI’m sorry to hear you’re having trouble filing a reclamation. I can walk you through the process:\n\n1. Log in to your account and go to the \"Orders\" section.\n2. Find the order you’d like to dispute and click \"View details.\"\n3. Click the \"File a reclamation\" button and fill out the required information (order number, reason, supporting documents).\n4. Submit the form and you’ll receive a confirmation email with a reference number.\n\nIf you run into any issues or need further help, just let me know and I’ll be happy to assist.\n\nThank you for reaching out!"
+      },
+      "error": null,
+      "latency_ms": 2853.56,
+      "prompt_tokens": 685,
+      "completion_tokens": 338,
+      "cost_usd": 0.00015277
+    },
+    {
+      "ticket_id": "ticket_071",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping Address",
+        "summary": "Customer needs help submitting a secondary shipping address.",
+        "draft_reply": "Hi,\n\nThank you for reaching out. To add a secondary shipping address, log into your account, go to \"Addresses\", click \"Add new address\", fill in the details, and save. If you run into any issues, let us know and we’ll assist you further.\n\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 6980.68,
+      "prompt_tokens": 683,
+      "completion_tokens": 461,
+      "cost_usd": 0.00018953
+    },
+    {
+      "ticket_id": "ticket_047",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to know when refunds can be requested.",
+        "draft_reply": "Hi there,\nThank you for reaching out. Refunds are available for orders that meet our policy criteria, such as items that are defective, not as described, or if you’re unsatisfied within 30 days of delivery. If you need help determining eligibility for a specific order, just let us know the order number and we’ll review it for you. We’re happy to assist further!"
+      },
+      "error": null,
+      "latency_ms": 5711.18,
+      "prompt_tokens": 680,
+      "completion_tokens": 411,
+      "cost_usd": 0.0001743
+    },
+    {
+      "ticket_id": "ticket_050",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to write a review for a product.",
+        "draft_reply": "Thank you for reaching out! We'd love to hear your thoughts. Please visit our product page and click \"Write a Review\" to share your opinion."
+      },
+      "error": null,
+      "latency_ms": 6192.19,
+      "prompt_tokens": 680,
+      "completion_tokens": 408,
+      "cost_usd": 0.0001734
+    },
+    {
+      "ticket_id": "ticket_118",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping Address"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping Address",
+        "summary": "Customer cannot set up a shipping address.",
+        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble adding a shipping address. Please make sure all required fields (street, city, ZIP, country) are filled in correctly and that the ZIP code matches the country. If the problem persists, try clearing your browser cache or using a different browser. If you still can’t add the address, let us know and we’ll add it for you.\n\nThanks for your patience!"
+      },
+      "error": null,
+      "latency_ms": 2116.69,
+      "prompt_tokens": 679,
+      "completion_tokens": 557,
+      "cost_usd": 0.00021803
+    },
+    {
+      "ticket_id": "ticket_164",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "Withdrawal"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "medium",
+        "product": "Withdrawal Penalty",
+        "summary": "Customer wants to check the withdrawal penalty.",
+        "draft_reply": "Hello! I understand you’d like to know the withdrawal penalty for your account. Please log in to your dashboard, go to the “Fees & Charges” section, and select “Withdrawal Fees” to view the current penalty. If you need a more detailed breakdown or have any other questions, let me know and I’ll be happy to help."
+      },
+      "error": null,
+      "latency_ms": 5148.3,
+      "prompt_tokens": 677,
+      "completion_tokens": 800,
+      "cost_usd": 0.00029078
+    },
+    {
+      "ticket_id": "ticket_025",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "medium",
+        "product": "Subscription",
+        "summary": "Customer wants to know how to check the early exit charge.",
+        "draft_reply": "Hi,\n\nThank you for reaching out. To view your early exit charge, log into your account, navigate to the Subscription section, and click on \"Early Exit Fee\" to see the amount. If you need further assistance, just let us know.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 3806.77,
+      "prompt_tokens": 681,
+      "completion_tokens": 419,
+      "cost_usd": 0.00017678
+    },
+    {
+      "ticket_id": "ticket_034",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests a refund for a recent payment.",
+        "draft_reply": "Hi,\n\nI’m sorry to hear you need a refund. Please provide your order number and the payment details, and we’ll process the refund promptly.\n\nThank you for your patience."
+      },
+      "error": null,
+      "latency_ms": 8945.48,
+      "prompt_tokens": 689,
+      "completion_tokens": 270,
+      "cost_usd": 0.00013268
+    },
+    {
+      "ticket_id": "ticket_014",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "Withdrawal"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "medium",
+        "product": "Withdrawal Penalty",
+        "summary": "Customer asks about the withdrawal penalty fee.",
+        "draft_reply": "Hi! I’m happy to help. The withdrawal penalty depends on your account type and the timing of the withdrawal. You can view the exact fee in the Fees section of the app or on our website under “Withdrawal Policies.” If you need a precise amount for a specific transaction, just let me know the date and amount, and I’ll calculate it for you. Thanks for reaching out!"
+      },
+      "error": null,
+      "latency_ms": 5476.49,
+      "prompt_tokens": 676,
+      "completion_tokens": 577,
+      "cost_usd": 0.0002238
+    },
+    {
+      "ticket_id": "ticket_077",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know expected delivery time for their parcel.",
+        "draft_reply": "Hi there,\nThank you for reaching out. I’m happy to help you track your shipment. Please provide your order number or the tracking code you received, and I’ll look up the current status and estimated delivery date for you.\nIf you already have a tracking number, you can also check the carrier’s website directly for the most up-to-date information.\nLet me know if there’s anything else I can assist with!\nBest regards,\n[Your Name]"
+      },
+      "error": null,
+      "latency_ms": 5381.61,
+      "prompt_tokens": 681,
+      "completion_tokens": 760,
+      "cost_usd": 0.00027907
+    },
+    {
+      "ticket_id": "ticket_159",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests a refund for a recent purchase.",
+        "draft_reply": "Hi, I'm sorry to hear you need a refund. Please provide your order number and purchase date so we can process it promptly. Thank you."
+      },
+      "error": null,
+      "latency_ms": 1132.45,
+      "prompt_tokens": 674,
+      "completion_tokens": 390,
+      "cost_usd": 0.00016755
+    },
+    {
+      "ticket_id": "ticket_134",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Account"
+      },
+      "prediction": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer cannot create an account.",
+        "draft_reply": "Hi there,\n\nI’m sorry you’re having trouble creating an account. Let’s get this sorted out quickly:\n1. Make sure you’re using a supported browser (Chrome, Firefox, Safari) and that JavaScript is enabled.\n2. Clear your browser cache or try an incognito/private window.\n3. Double‑check that the email address and password meet the required format.\n4. If the form still won’t submit, try resetting your password or use the “Forgot password” link.\n\nIf none of these steps work, please reply with the exact error message you see, and we’ll investigate further. You can also reach us at support@example.com or call 1‑800‑123‑4567.\n\nThank you for your patience!\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 3392.54,
+      "prompt_tokens": 675,
+      "completion_tokens": 893,
+      "cost_usd": 0.00031853
+    },
+    {
+      "ticket_id": "ticket_143",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "withdrawal fee"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "medium",
+        "product": "Withdrawal",
+        "summary": "Customer wants to know about withdrawal charges.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. The withdrawal fee depends on the method you choose:\n- Bank transfer: $5 per transaction\n- Wire transfer: $10 per transaction\n- Instant transfer: $2 per transaction\n\nYou can view the exact fee for your upcoming withdrawal in the \"Fees\" section of the app under \"Withdrawals\". If you need a detailed breakdown or have any other questions, just let us know and we’ll be happy to help.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 1548.09,
+      "prompt_tokens": 673,
+      "completion_tokens": 315,
+      "cost_usd": 0.00014498
+    },
+    {
+      "ticket_id": "ticket_187",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer needs help submitting feedback about services.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out! We’d love to hear your thoughts. You can share feedback directly through our website by navigating to the \"Feedback\" section, or simply reply to this email with your comments. If you prefer, you can also use the feedback form at https://example.com/feedback. Let us know if you need any further assistance.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 790.59,
+      "prompt_tokens": 679,
+      "completion_tokens": 530,
+      "cost_usd": 0.00020992
+    },
+    {
+      "ticket_id": "ticket_101",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "low",
+        "product": "Shipping Options"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "low",
+        "product": "Shipping",
+        "summary": "Customer wants to see available shipment options.",
+        "draft_reply": "Hello! To view all shipment options, go to your order page, click \"Change Shipping\", and select from the list of available carriers and delivery speeds. If you need further assistance, let us know!"
+      },
+      "error": null,
+      "latency_ms": 4928.17,
+      "prompt_tokens": 683,
+      "completion_tokens": 432,
+      "cost_usd": 0.00018082
+    },
+    {
+      "ticket_id": "ticket_107",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "Billing"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Request to view bill #12588.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. To view bill #12588, log in to your account, go to the Billing section, and click on the bill number. If you need further assistance, let us know and we’ll be happy to help!"
+      },
+      "error": null,
+      "latency_ms": 5841.98,
+      "prompt_tokens": 679,
+      "completion_tokens": 279,
+      "cost_usd": 0.00013463
+    },
+    {
+      "ticket_id": "ticket_115",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "Parcel Delivery"
+      },
+      "prediction": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know expected arrival date of their parcel.",
+        "draft_reply": "Hi,\n\nThank you for contacting us. To check your parcel’s arrival, please provide your tracking number or order ID. Once we have that, we’ll look up the status and let you know the estimated delivery date.\n\nIf you don’t have the tracking number, you can also check the carrier’s website or contact them directly. We’re here to help if you need anything else.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 6047.29,
+      "prompt_tokens": 680,
+      "completion_tokens": 556,
+      "cost_usd": 0.0002178
+    },
+    {
+      "ticket_id": "ticket_153",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer needs help downloading invoice #00108.",
+        "draft_reply": "Hello! I’m sorry you’re having trouble downloading invoice #00108. Please log into your account, go to the Orders page, click the order that generated the invoice, and then click the “Download Invoice” button. If the button is missing or the file won’t open, let me know and I’ll provide a direct link for you. Thank you for reaching out!"
+      },
+      "error": null,
+      "latency_ms": 7072.8,
+      "prompt_tokens": 678,
+      "completion_tokens": 363,
+      "cost_usd": 0.00015975
+    },
+    {
+      "ticket_id": "ticket_020",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "DELIVERY",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to know how to check delivery options.",
+        "draft_reply": "Hi there,\n\nThanks for reaching out! To view delivery options, log into your account, go to your order details, and click the \"Delivery Options\" tab. If you need further help, just let us know.\n\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 1751.9,
+      "prompt_tokens": 682,
+      "completion_tokens": 337,
+      "cost_usd": 0.00015225
+    },
+    {
+      "ticket_id": "ticket_186",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests compensation of specified amount.",
+        "draft_reply": "Thank you for reaching out. I’m sorry to hear you’re disappointed. To process your compensation request, could you please provide your order number and the amount you’re expecting? We’ll review it promptly."
+      },
+      "error": null,
+      "latency_ms": 6259.54,
+      "prompt_tokens": 683,
+      "completion_tokens": 576,
+      "cost_usd": 0.00022402
+    },
+    {
+      "ticket_id": "ticket_082",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "Refund"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests reimbursement of specified amount.",
+        "draft_reply": "Hello, thank you for reaching out. I’m sorry to hear you’re awaiting a refund. I’ve checked our records and can confirm that your refund of {{Currency Symbol}}{{Refund Amount}} is currently being processed and should appear in your account within 3–5 business days. If you don’t see it by then, please let me know and I’ll investigate further. Thank you for your patience."
+      },
+      "error": null,
+      "latency_ms": 714.25,
+      "prompt_tokens": 682,
+      "completion_tokens": 444,
+      "cost_usd": 0.00018435
+    },
+    {
+      "ticket_id": "ticket_174",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "high",
+        "product": "Order"
+      },
+      "prediction": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests cancellation of an order.",
+        "draft_reply": "Hello, I'm sorry you need to cancel your order. Please provide the order number and we will process the cancellation promptly. Thank you."
+      },
+      "error": null,
+      "latency_ms": 770.9,
+      "prompt_tokens": 679,
+      "completion_tokens": 434,
+      "cost_usd": 0.00018112
+    },
+    {
+      "ticket_id": "ticket_023",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "General",
+        "summary": "Customer reports a payment issue.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. I'm sorry to hear you're experiencing a payment problem. Could you please provide the transaction ID and the error message you received? This will help us investigate and resolve the issue promptly.\n\nThank you for your patience.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 3259.12,
+      "prompt_tokens": 679,
+      "completion_tokens": 443,
+      "cost_usd": 0.00018382
+    },
+    {
+      "ticket_id": "ticket_168",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Gold account"
+      },
+      "prediction": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Gold account",
+        "summary": "Customer requests assistance opening a gold account.",
+        "draft_reply": "Hello! I'd be happy to help you open a Gold account. Please provide your full name, email address, and any preferred contact details, and I'll guide you through the process. If you have any questions along the way, feel free to let me know. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 865.64,
+      "prompt_tokens": 679,
+      "completion_tokens": 554,
+      "cost_usd": 0.00021713
+    },
+    {
+      "ticket_id": "ticket_091",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Pro Account"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Pro Account",
+        "summary": "Customer requests help to open a Pro account.",
+        "draft_reply": "Hello! I'd be happy to help you upgrade to a Pro account. Please click the \"Upgrade\" button in your dashboard, follow the prompts to enter payment details, and let me know if you encounter any issues. If you need further assistance, feel free to reply. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 9382.09,
+      "prompt_tokens": 685,
+      "completion_tokens": 676,
+      "cost_usd": 0.00025417
+    },
+    {
+      "ticket_id": "ticket_100",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer requests a bill from Mr. Smith.",
+        "draft_reply": "Hello, thank you for reaching out. To locate the bill from Mr. Smith, could you please provide the invoice number or the date range? Once we have that, we’ll retrieve it for you. Let us know if you need anything else."
+      },
+      "error": null,
+      "latency_ms": 6917.89,
+      "prompt_tokens": 677,
+      "completion_tokens": 433,
+      "cost_usd": 0.00018067
+    },
+    {
+      "ticket_id": "ticket_123",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to know estimated delivery time for their order.",
+        "draft_reply": "Hi, thank you for reaching out! The typical shipping time for our products is 3–5 business days, depending on your location. If you need a more precise estimate, please share your order number and shipping address, and we’ll provide an exact delivery window. Let us know if you have any other questions!"
+      },
+      "error": null,
+      "latency_ms": 6333.7,
+      "prompt_tokens": 681,
+      "completion_tokens": 643,
+      "cost_usd": 0.00024398
+    },
+    {
+      "ticket_id": "ticket_104",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Newsletter",
+        "summary": "Customer requests to unsubscribe from the newsletter.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. I'm sorry you wish to unsubscribe from our newsletter. Please click the unsubscribe link at the bottom of any of our emails, or let me know if you need further assistance and I’ll remove your email from our mailing list right away.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 8005.08,
+      "prompt_tokens": 677,
+      "completion_tokens": 446,
+      "cost_usd": 0.00018458
+    },
+    {
+      "ticket_id": "ticket_175",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to file a claim against the business.",
+        "draft_reply": "Thank you for reaching out. We’re sorry to hear you’d like to file a claim. Please provide the details of the issue, including any relevant order numbers or dates, and we’ll forward your request to our claims team for review. We’ll keep you updated on the next steps and appreciate your patience."
+      },
+      "error": null,
+      "latency_ms": 3760.78,
+      "prompt_tokens": 680,
+      "completion_tokens": 606,
+      "cost_usd": 0.0002328
+    },
+    {
+      "ticket_id": "ticket_148",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "Invoices",
+        "summary": "Customer requests instructions to retrieve invoices from a specific person.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. To download invoices for {{Person Name}}, please log in to your account, navigate to the Billing section, select the person’s name from the list, and click the \"Download Invoice\" button. If you encounter any issues, let us know and we’ll be happy to assist further.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 5970.58,
+      "prompt_tokens": 680,
+      "completion_tokens": 400,
+      "cost_usd": 0.000171
     },
     {
       "ticket_id": "ticket_085",
@@ -2242,59 +1092,13 @@
         "draft_reply": "Sure! We accept credit cards, debit cards, PayPal, Apple Pay, Google Pay, and bank transfers. Let me know if you need help with a specific method."
       },
       "error": null,
-      "latency_ms": 4557.22,
+      "latency_ms": 6545.69,
       "prompt_tokens": 677,
-      "completion_tokens": 308,
-      "cost_usd": 0.00014317
+      "completion_tokens": 310,
+      "cost_usd": 0.00014377
     },
     {
-      "ticket_id": "ticket_133",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": true,
-      "ground_truth": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account"
-      },
-      "prediction": {
-        "category": "ACCOUNT",
-        "priority": "medium",
-        "product": "Account",
-        "summary": "Customer requests a new account for their wife.",
-        "draft_reply": "Thank you for reaching out! We’re happy to help set up a new account for your wife. Please provide her email address and any preferred username, and we’ll create the account and send her the confirmation details right away."
-      },
-      "error": null,
-      "latency_ms": 5923.86,
-      "prompt_tokens": 678,
-      "completion_tokens": 519,
-      "cost_usd": 0.00020655
-    },
-    {
-      "ticket_id": "ticket_020",
-      "schema_valid": true,
-      "category_correct": true,
-      "priority_correct": false,
-      "ground_truth": {
-        "category": "DELIVERY",
-        "priority": "low",
-        "product": "General"
-      },
-      "prediction": {
-        "category": "DELIVERY",
-        "priority": "medium",
-        "product": "Delivery Options",
-        "summary": "Customer wants to know how to check delivery options.",
-        "draft_reply": "Hi there,\n\nThanks for reaching out. To view delivery options, log into your account, go to \"Orders\", select the order you’re interested in, and click \"View Delivery Options\". If you need further assistance, just let us know and we’ll be happy to help!"
-      },
-      "error": null,
-      "latency_ms": 2595.98,
-      "prompt_tokens": 682,
-      "completion_tokens": 424,
-      "cost_usd": 0.00017835
-    },
-    {
-      "ticket_id": "ticket_052",
+      "ticket_id": "ticket_191",
       "schema_valid": true,
       "category_correct": true,
       "priority_correct": true,
@@ -2307,14 +1111,1210 @@
         "category": "CONTACT",
         "priority": "low",
         "product": "General",
-        "summary": "Customer requests the customer support phone number.",
-        "draft_reply": "Thank you for reaching out! You can call our customer support at 1-800-123-4567. If you prefer, you can also email support@example.com or use the live chat on our website. Let us know if you need any further assistance."
+        "summary": "Customer wants to contact an agent.",
+        "draft_reply": "Sure, I'd be happy to help you get in touch with an agent. Please let me know your preferred contact method (phone, email, chat) and a convenient time."
       },
       "error": null,
-      "latency_ms": 796.58,
+      "latency_ms": 4802.71,
+      "prompt_tokens": 676,
+      "completion_tokens": 476,
+      "cost_usd": 0.0001935
+    },
+    {
+      "ticket_id": "ticket_177",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Corporate Newsletter",
+        "summary": "Customer wants help subscribing to the corporate newsletter.",
+        "draft_reply": "Hello! I'd be happy to help you subscribe to our corporate newsletter. Please provide your email address or click the link below to sign up. If you encounter any issues, let me know and I'll assist further. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 6205.15,
       "prompt_tokens": 678,
-      "completion_tokens": 461,
-      "cost_usd": 0.00018915
+      "completion_tokens": 467,
+      "cost_usd": 0.00019095
+    },
+    {
+      "ticket_id": "ticket_192",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "low",
+        "product": "Payment Methods"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to know the accepted payment options.",
+        "draft_reply": "Sure! We accept credit cards, debit cards, PayPal, Apple Pay, Google Pay, and bank transfers. Let me know if you need help setting up."
+      },
+      "error": null,
+      "latency_ms": 5588.46,
+      "prompt_tokens": 679,
+      "completion_tokens": 644,
+      "cost_usd": 0.00024413
+    },
+    {
+      "ticket_id": "ticket_146",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "high",
+        "product": "Order"
+      },
+      "prediction": {
+        "category": "ORDER",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer wants to correct an order.",
+        "draft_reply": "Hello,\n\nThank you for contacting us. To correct your order, please let us know the changes you’d like to make (e.g., item, quantity, address). We’ll update it promptly and confirm once the changes are applied.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 1765.41,
+      "prompt_tokens": 684,
+      "completion_tokens": 459,
+      "cost_usd": 0.000189
+    },
+    {
+      "ticket_id": "ticket_008",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "Claims"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to file a claim.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. To file a claim, please log in to your account, go to the \"Orders\" section, select the order in question, and click the \"File a Claim\" button. If you need further assistance, let us know and we’ll guide you through the process.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 5912.96,
+      "prompt_tokens": 683,
+      "completion_tokens": 312,
+      "cost_usd": 0.00014483
+    },
+    {
+      "ticket_id": "ticket_081",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "ORDER",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks where to purchase several products.",
+        "draft_reply": "Thank you for reaching out! You can purchase our products directly from our website at www.example.com, through our mobile app, or at authorized retail partners listed on our store locator page. If you need help finding a specific product or retailer, let us know and we’ll gladly assist you further."
+      },
+      "error": null,
+      "latency_ms": 5670.15,
+      "prompt_tokens": 677,
+      "completion_tokens": 376,
+      "cost_usd": 0.00016357
+    },
+    {
+      "ticket_id": "ticket_165",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "medium",
+        "product": "Subscription",
+        "summary": "Customer wants to view early exit fees for their subscription.",
+        "draft_reply": "Hi there,\n\nI understand you’d like to see the early exit fees for your subscription. You can view them by logging into your account, navigating to the \"Subscription\" section, and clicking on \"Early Exit Fees\" or \"Cancellation Details\". If you don’t see that option, let me know and I’ll provide the exact link or send the fee schedule directly.\n\nThanks for reaching out!"
+      },
+      "error": null,
+      "latency_ms": 6101.71,
+      "prompt_tokens": 685,
+      "completion_tokens": 314,
+      "cost_usd": 0.00014558
+    },
+    {
+      "ticket_id": "ticket_189",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CANCEL",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know how to check cancellation charges.",
+        "draft_reply": "Hi there,\nI understand you'd like to see the cancellation fees for your order. Log into your account, go to Orders, and select the order to view the fee. If you can't find it or need help, let us know and we'll assist you right away.\nThanks for reaching out!"
+      },
+      "error": null,
+      "latency_ms": 1577.31,
+      "prompt_tokens": 682,
+      "completion_tokens": 891,
+      "cost_usd": 0.00031845
+    },
+    {
+      "ticket_id": "ticket_084",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests compensation for an issue.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. I’m sorry to hear you’re looking for compensation. To help us process your request quickly, could you please provide the order number or any relevant details about the issue? Once we have that information, we’ll review your case and get back to you with next steps.\n\nThank you for your patience and understanding."
+      },
+      "error": null,
+      "latency_ms": 7680.56,
+      "prompt_tokens": 678,
+      "completion_tokens": 298,
+      "cost_usd": 0.00014025
+    },
+    {
+      "ticket_id": "ticket_012",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer requests help subscribing to the company newsletter.",
+        "draft_reply": "Hi! I'd be happy to help you subscribe to our newsletter. Just let me know your email address, and I'll add you to the list right away. If you prefer, I can send you a confirmation link. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 6891.47,
+      "prompt_tokens": 679,
+      "completion_tokens": 389,
+      "cost_usd": 0.00016762
+    },
+    {
+      "ticket_id": "ticket_185",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Newsletter"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Newsletter",
+        "summary": "Customer wants to unsubscribe from the company newsletter.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. I’m sorry you’d like to stop receiving our newsletter. Please click the \"Unsubscribe\" link at the bottom of any of our emails, or let me know if you’d prefer I remove you from the list manually. If you need any further assistance, just reply to this message.\n\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 5633.25,
+      "prompt_tokens": 679,
+      "completion_tokens": 319,
+      "cost_usd": 0.00014662
+    },
+    {
+      "ticket_id": "ticket_078",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping Address"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "low",
+        "product": "Shipping Address",
+        "summary": "Customer wants to set up a new shipping address.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. To add a new shipping address, go to your account settings, select \"Addresses,\" click \"Add new address,\" fill in the details, and save. If you encounter any issues, let us know and we’ll help you through it.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 6049.99,
+      "prompt_tokens": 680,
+      "completion_tokens": 614,
+      "cost_usd": 0.0002352
+    },
+    {
+      "ticket_id": "ticket_139",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks for address to submit a comment for a product.",
+        "draft_reply": "Thank you for reaching out! You can submit product feedback by emailing feedback@example.com or using the feedback form on our website. Let us know if you need further assistance."
+      },
+      "error": null,
+      "latency_ms": 7912.28,
+      "prompt_tokens": 683,
+      "completion_tokens": 291,
+      "cost_usd": 0.00013853
+    },
+    {
+      "ticket_id": "ticket_002",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to know customer service hours.",
+        "draft_reply": "Thank you for reaching out. Our customer service team is available Monday-Friday, 9 am-5 pm EST. For assistance outside those hours, email support@example.com."
+      },
+      "error": null,
+      "latency_ms": 1547.71,
+      "prompt_tokens": 681,
+      "completion_tokens": 953,
+      "cost_usd": 0.00033697
+    },
+    {
+      "ticket_id": "ticket_065",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "low",
+        "product": "Articles"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks where to shop for articles.",
+        "draft_reply": "Thank you for reaching out! You can purchase articles directly from our online store at www.example.com, or visit any of our retail locations listed on the Store Locator page. If you need further assistance, feel free to let us know."
+      },
+      "error": null,
+      "latency_ms": 1182.19,
+      "prompt_tokens": 676,
+      "completion_tokens": 608,
+      "cost_usd": 0.0002331
+    },
+    {
+      "ticket_id": "ticket_015",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants help leaving feedback about products.",
+        "draft_reply": "Thank you for reaching out! We’d love to hear your thoughts. You can leave feedback by visiting our product page and clicking the \"Leave a Review\" button, or simply reply to this email with your comments. Let us know if you need any assistance."
+      },
+      "error": null,
+      "latency_ms": 1460.46,
+      "prompt_tokens": 678,
+      "completion_tokens": 500,
+      "cost_usd": 0.00020085
+    },
+    {
+      "ticket_id": "ticket_094",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Freemium Account"
+      },
+      "prediction": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Freemium Account",
+        "summary": "Help opening a freemium account for daughter.",
+        "draft_reply": "Hi there,\n\nI’m happy to help you set up a freemium account for your daughter. Please follow these steps:\n1. Go to our sign‑up page and click “Create Free Account.”\n2. Enter her email address and choose a password.\n3. Verify the email by clicking the link we’ll send.\n4. Once verified, she can log in and start using the free tier.\n\nIf you run into any issues or need further assistance, just let me know and I’ll be glad to help.\n\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 669.32,
+      "prompt_tokens": 682,
+      "completion_tokens": 437,
+      "cost_usd": 0.00018225
+    },
+    {
+      "ticket_id": "ticket_142",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "Shipping"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know estimated arrival time of their parcel.",
+        "draft_reply": "Hi,\n\nThank you for reaching out. To check the estimated arrival of your parcel, please provide your tracking number or order ID. Once we have that, we can look up the status and give you an exact delivery window.\n\nIf you don’t have the tracking number handy, you can also log into your account and view the shipment details under \"My Orders\".\n\nLet us know if you need any further assistance.\n\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 4873.22,
+      "prompt_tokens": 678,
+      "completion_tokens": 551,
+      "cost_usd": 0.00021615
+    },
+    {
+      "ticket_id": "ticket_024",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CANCEL",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to view cancellation penalties.",
+        "draft_reply": "Hi,\n\nThank you for reaching out. You can view our cancellation penalties in the \"Cancellation Policy\" section of your account dashboard or on our website under \"Terms & Conditions.\" If you need further assistance, let us know.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 9015.37,
+      "prompt_tokens": 680,
+      "completion_tokens": 518,
+      "cost_usd": 0.0002064
+    },
+    {
+      "ticket_id": "ticket_095",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "Invoice"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer needs help downloading a bill from a person.",
+        "draft_reply": "Hi there, I'm sorry you're having trouble downloading your bill. Please log into your account, go to the 'Billing' section, and click the 'Download PDF' button next to the invoice. If you still can't see the option, let me know and I'll assist further. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 7800.77,
+      "prompt_tokens": 684,
+      "completion_tokens": 555,
+      "cost_usd": 0.0002178
+    },
+    {
+      "ticket_id": "ticket_136",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "Delivery"
+      },
+      "prediction": {
+        "category": "DELIVERY",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer requests information about delivery periods.",
+        "draft_reply": "Thank you for reaching out. Delivery periods typically range from 3–5 business days depending on location. If you need a specific estimate, let us know your address and order details."
+      },
+      "error": null,
+      "latency_ms": 386.65,
+      "prompt_tokens": 676,
+      "completion_tokens": 231,
+      "cost_usd": 0.00012
+    },
+    {
+      "ticket_id": "ticket_006",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping"
+      },
+      "prediction": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to submit a different delivery address.",
+        "draft_reply": "Sure! You can change your delivery address in your account settings or by contacting our support team. Let me know if you need further assistance."
+      },
+      "error": null,
+      "latency_ms": 876.41,
+      "prompt_tokens": 681,
+      "completion_tokens": 355,
+      "cost_usd": 0.00015757
+    },
+    {
+      "ticket_id": "ticket_063",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Pro Account"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "medium",
+        "product": "Pro account",
+        "summary": "Customer wants to create a pro account for their dad.",
+        "draft_reply": "Hi there,\n\nThanks for reaching out! To set up a Pro account for your dad, simply log in to your own account, go to the \"Subscriptions\" tab, click \"Add a Family Member\", and follow the prompts to upgrade to Pro. If you run into any issues, let us know and we’ll help you through the process.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 12348.9,
+      "prompt_tokens": 683,
+      "completion_tokens": 342,
+      "cost_usd": 0.00015383
+    },
+    {
+      "ticket_id": "ticket_150",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks for support hours.",
+        "draft_reply": "Hello! Our customer support team is available Monday through Friday from 9 AM to 6 PM EST. If you need assistance outside those hours, feel free to leave a message and we’ll get back to you as soon as possible. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 891.09,
+      "prompt_tokens": 681,
+      "completion_tokens": 535,
+      "cost_usd": 0.00021157
+    },
+    {
+      "ticket_id": "ticket_172",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "CANCEL",
+        "priority": "high",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know about early exit charges for their subscription.",
+        "draft_reply": "Hi there,\n\nI’m sorry you’re frustrated. Early exit charges apply when you cancel a subscription before the end of the billing cycle. You can view the exact fee in your account under \"Subscription Settings\" or by clicking the link below:\n\nhttps://www.example.com/account/subscription\n\nIf the amount shown doesn’t match what you expected, let me know and I’ll investigate further.\n\nThank you for your patience!"
+      },
+      "error": null,
+      "latency_ms": 2671.29,
+      "prompt_tokens": 678,
+      "completion_tokens": 353,
+      "cost_usd": 0.00015675
+    },
+    {
+      "ticket_id": "ticket_179",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "General",
+        "summary": "Customer unsure how to report payment issues.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. To report a payment issue, please go to the \"Payments\" section in your account, click \"Report a Problem\", and fill out the form with the transaction details. If you need further assistance, let us know and we’ll guide you through the process.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 5897.16,
+      "prompt_tokens": 684,
+      "completion_tokens": 656,
+      "cost_usd": 0.0002481
+    },
+    {
+      "ticket_id": "ticket_089",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "Rebate"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "medium",
+        "product": "Rebate",
+        "summary": "Customer wants to check the current status of their rebate.",
+        "draft_reply": "Hi, thanks for reaching out. To view your rebate status, log into your account, navigate to the \"Rebates\" section, and you’ll see the latest update. If you need further assistance, let us know."
+      },
+      "error": null,
+      "latency_ms": 7646.55,
+      "prompt_tokens": 681,
+      "completion_tokens": 399,
+      "cost_usd": 0.00017077
+    },
+    {
+      "ticket_id": "ticket_180",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks for customer service hours.",
+        "draft_reply": "Thank you for contacting us. Our customer service team is available Monday through Friday from 9 am to 6 pm EST. If you need assistance outside those hours, please leave a message and we'll get back to you within 24 hours."
+      },
+      "error": null,
+      "latency_ms": 1437.76,
+      "prompt_tokens": 680,
+      "completion_tokens": 651,
+      "cost_usd": 0.0002463
+    },
+    {
+      "ticket_id": "ticket_190",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "Online Payments",
+        "summary": "Customer requests assistance with online payment issues.",
+        "draft_reply": "Hi, I'm sorry you're experiencing trouble with online payments. Please check your payment method details, ensure sufficient funds, and try again. If the issue persists, let us know the error code or screenshot so we can investigate further. Thank you for your patience."
+      },
+      "error": null,
+      "latency_ms": 5208.7,
+      "prompt_tokens": 678,
+      "completion_tokens": 554,
+      "cost_usd": 0.00021705
+    },
+    {
+      "ticket_id": "ticket_126",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "Payment"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "urgent",
+        "product": "General",
+        "summary": "Customer needs help resolving payment issues.",
+        "draft_reply": "Hello,\n\nI’m sorry you’re experiencing trouble with your payment. Let’s get this sorted out quickly. First, please double‑check that the card details you entered are correct and that your card has sufficient funds. If everything looks right, try using a different card or a different payment method (e.g., PayPal). If the problem persists, let me know the exact error message you see, and I’ll investigate further or arrange a refund if necessary.\n\nThank you for your patience.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 1004.52,
+      "prompt_tokens": 676,
+      "completion_tokens": 633,
+      "cost_usd": 0.0002406
+    },
+    {
+      "ticket_id": "ticket_158",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer requests to swap items from a recent purchase.",
+        "draft_reply": "Hi,\nThank you for reaching out. We can help you swap items from your recent order. Please let us know which items you’d like to exchange and any replacements you prefer, and we’ll guide you through the process. If you need further assistance, feel free to reply.\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 446.6,
+      "prompt_tokens": 683,
+      "completion_tokens": 328,
+      "cost_usd": 0.00014962
+    },
+    {
+      "ticket_id": "ticket_122",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "Newsletter"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks how to sign up for the newsletter.",
+        "draft_reply": "Hi there, thanks for reaching out! To subscribe to our newsletter, visit our website, scroll to the footer, and enter your email in the subscription box. Let us know if you need further help. Best regards."
+      },
+      "error": null,
+      "latency_ms": 807.71,
+      "prompt_tokens": 678,
+      "completion_tokens": 450,
+      "cost_usd": 0.00018585
+    },
+    {
+      "ticket_id": "ticket_072",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Unable to receive error notifications during sign-up.",
+        "draft_reply": "Hi,\n\nI’m sorry you’re having trouble seeing error messages when signing up. Could you let me know which device and browser you’re using, and if you see any error text at all? If possible, try clearing your browser cache or using a different browser and let me know the result. Once I have that info, I can help you resolve the issue quickly.\n\nThank you for your patience!"
+      },
+      "error": null,
+      "latency_ms": 510.11,
+      "prompt_tokens": 680,
+      "completion_tokens": 280,
+      "cost_usd": 0.000135
+    },
+    {
+      "ticket_id": "ticket_046",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping Address"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer asks how to update delivery address.",
+        "draft_reply": "Hi! You can update your delivery address by going to your account settings, selecting \"Shipping Addresses\", and editing or adding a new address. If you need further help, let us know!"
+      },
+      "error": null,
+      "latency_ms": 558.21,
+      "prompt_tokens": 678,
+      "completion_tokens": 378,
+      "cost_usd": 0.00016425
+    },
+    {
+      "ticket_id": "ticket_124",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer is filing a complaint about the organization.",
+        "draft_reply": "Dear Customer,\n\nThank you for reaching out. We’re sorry to hear you’re dissatisfied. Could you please provide more details about your experience so we can investigate and address the issue promptly?\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 6130.65,
+      "prompt_tokens": 675,
+      "completion_tokens": 556,
+      "cost_usd": 0.00021742
+    },
+    {
+      "ticket_id": "ticket_096",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping"
+      },
+      "prediction": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to change their address.",
+        "draft_reply": "Hi there,\n\nThank you for reaching out. We can help you update your address. Please log in to your account, go to \"Settings\" → \"Address\", and enter the new details. If you prefer, just reply with the updated address and we’ll take care of it for you.\n\nLet us know if you need any further assistance!"
+      },
+      "error": null,
+      "latency_ms": 7299.87,
+      "prompt_tokens": 677,
+      "completion_tokens": 302,
+      "cost_usd": 0.00014138
+    },
+    {
+      "ticket_id": "ticket_030",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "medium",
+        "product": "Payment methods"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to know available payment methods.",
+        "draft_reply": "Hi there, thank you for reaching out. We accept credit cards, debit cards, PayPal, Apple Pay, Google Pay, and bank transfers. Let us know if you need help choosing a method."
+      },
+      "error": null,
+      "latency_ms": 3867.75,
+      "prompt_tokens": 678,
+      "completion_tokens": 492,
+      "cost_usd": 0.00019845
+    },
+    {
+      "ticket_id": "ticket_016",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "Refund"
+      },
+      "prediction": {
+        "category": "REFUND",
+        "priority": "high",
+        "product": "General",
+        "summary": "Customer requests a refund of {{Refund Amount}} dollars.",
+        "draft_reply": "Hi,\n\nI’m sorry you’re experiencing this issue. Please provide your order number and the exact amount you’d like refunded, and we’ll process it promptly.\n\nThank you for your patience."
+      },
+      "error": null,
+      "latency_ms": 799.83,
+      "prompt_tokens": 680,
+      "completion_tokens": 222,
+      "cost_usd": 0.0001176
+    },
+    {
+      "ticket_id": "ticket_130",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Account Type"
+      },
+      "prediction": {
+        "category": "ACCOUNT",
+        "priority": "medium",
+        "product": "Account Type",
+        "summary": "Customer wants instructions on using the Account Type account.",
+        "draft_reply": "Hello! I’m happy to help you get started with your Account Type account. First, log in to your dashboard and navigate to the \"Account Settings\" tab. From there, you can customize your preferences, view available features, and manage billing. If you’d like a quick walkthrough, let me know and I can schedule a short demo or send you a step‑by‑step guide. Please feel free to reach out with any further questions. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 624.41,
+      "prompt_tokens": 680,
+      "completion_tokens": 438,
+      "cost_usd": 0.0001824
+    },
+    {
+      "ticket_id": "ticket_152",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to speak to a representative.",
+        "draft_reply": "Thank you for reaching out. I'd be happy to connect you with a support specialist. Please let me know your preferred contact method and time, and I'll arrange it promptly."
+      },
+      "error": null,
+      "latency_ms": 1369.88,
+      "prompt_tokens": 676,
+      "completion_tokens": 215,
+      "cost_usd": 0.0001152
+    },
+    {
+      "ticket_id": "ticket_129",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "FEEDBACK",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants help leaving a review about a service.",
+        "draft_reply": "Sure! To leave a review, go to the service page, click 'Leave a Review', fill out the form, and submit. Let me know if you need more help."
+      },
+      "error": null,
+      "latency_ms": 3013.11,
+      "prompt_tokens": 681,
+      "completion_tokens": 427,
+      "cost_usd": 0.00017918
+    },
+    {
+      "ticket_id": "ticket_092",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants instructions on how to contact support.",
+        "draft_reply": "Hello! You can reach our customer assistance by emailing support@example.com, calling 1-800-123-4567, or using the live chat on our website. Let me know if you need further help!"
+      },
+      "error": null,
+      "latency_ms": 4821.0,
+      "prompt_tokens": 679,
+      "completion_tokens": 275,
+      "cost_usd": 0.00013343
+    },
+    {
+      "ticket_id": "ticket_037",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "CONTACT",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer requests help to communicate with an assistant.",
+        "draft_reply": "Hi! I’m sorry you’re having trouble reaching an assistant. Please tap the 'Help' icon in the top right corner of the app and select 'Chat with an Assistant'. If that doesn’t work, let me know and I’ll assist further."
+      },
+      "error": null,
+      "latency_ms": 6833.23,
+      "prompt_tokens": 676,
+      "completion_tokens": 480,
+      "cost_usd": 0.0001947
+    },
+    {
+      "ticket_id": "ticket_057",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "Order",
+        "summary": "Customer requests to view the status of a specific order.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. You can view the status of your order by logging into your account and navigating to the \"Orders\" section. If you’d like, please share the order number here and we’ll provide the current status right away.\n\nBest regards,\nCustomer Support"
+      },
+      "error": null,
+      "latency_ms": 766.68,
+      "prompt_tokens": 682,
+      "completion_tokens": 344,
+      "cost_usd": 0.00015435
+    },
+    {
+      "ticket_id": "ticket_154",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer cannot update shipping address for their order.",
+        "draft_reply": "Hi,\nI’m sorry you’re having trouble updating your shipping address. Please log into your account, go to the Order History page, click the order in question, and select \"Edit Shipping Address.\" If the option is still unavailable, let me know the order number and I’ll update it for you.\nThank you for your patience."
+      },
+      "error": null,
+      "latency_ms": 6989.47,
+      "prompt_tokens": 680,
+      "completion_tokens": 684,
+      "cost_usd": 0.0002562
+    },
+    {
+      "ticket_id": "ticket_005",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": false,
+      "ground_truth": {
+        "category": "PAYMENT",
+        "priority": "low",
+        "product": "Payment Options"
+      },
+      "prediction": {
+        "category": "PAYMENT",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know how to view accepted payment methods.",
+        "draft_reply": "Hi there,\n\nThanks for reaching out! To see the payment methods we accept, log in to your account, go to \"Settings\" → \"Payment Options,\" and you’ll find a list of all available methods. If you need further assistance or have any other questions, just let us know.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 816.03,
+      "prompt_tokens": 680,
+      "completion_tokens": 290,
+      "cost_usd": 0.000138
+    },
+    {
+      "ticket_id": "ticket_011",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SUBSCRIPTION",
+        "priority": "low",
+        "product": "General",
+        "summary": "Customer wants to subscribe to the company newsletter.",
+        "draft_reply": "Sure, we can add you to our newsletter list. Please provide your email address or confirm your current email, and we'll send you the subscription confirmation."
+      },
+      "error": null,
+      "latency_ms": 9459.6,
+      "prompt_tokens": 681,
+      "completion_tokens": 367,
+      "cost_usd": 0.00016118
+    },
+    {
+      "ticket_id": "ticket_167",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "Shipping"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer cannot correct their shipping address.",
+        "draft_reply": "Hi,\n\nI’m sorry you’re having trouble updating your address. Please log into your account, go to \"Account Settings\" → \"Addresses\", edit the address, and click \"Save\". If the address still won’t update, let us know and we’ll help you manually correct it.\n\nThank you for your patience!"
+      },
+      "error": null,
+      "latency_ms": 4909.88,
+      "prompt_tokens": 676,
+      "completion_tokens": 317,
+      "cost_usd": 0.0001458
+    },
+    {
+      "ticket_id": "ticket_021",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer requests help locating bill #00108.",
+        "draft_reply": "Hello,\n\nI’m sorry you’re having trouble finding your bill. Please check your email inbox and spam folder for the invoice with reference #00108. If you still can’t locate it, let me know and I’ll resend the invoice to you right away.\n\nThank you for your patience!"
+      },
+      "error": null,
+      "latency_ms": 519.62,
+      "prompt_tokens": 680,
+      "completion_tokens": 235,
+      "cost_usd": 0.0001215
+    },
+    {
+      "ticket_id": "ticket_169",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "low",
+        "product": "Shipping Options"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "low",
+        "product": "Shipping",
+        "summary": "Customer requests information on available shipment methods.",
+        "draft_reply": "Hello! I'd be happy to help you with that. We currently offer standard, expedited, and overnight shipping options. Standard shipping takes 3–5 business days, expedited takes 1–2 days, and overnight delivers the next business day. If you need a specific delivery time or have any other preferences, just let me know and I can guide you through the selection process. Thank you!"
+      },
+      "error": null,
+      "latency_ms": 6077.73,
+      "prompt_tokens": 677,
+      "completion_tokens": 464,
+      "cost_usd": 0.00018997
+    },
+    {
+      "ticket_id": "ticket_163",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "ORDER",
+        "priority": "medium",
+        "product": "Order Tracking"
+      },
+      "prediction": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer cannot track their order.",
+        "draft_reply": "Hi there,\nI'm sorry you're having trouble tracking your order. Please double-check the order number you entered and visit our tracking page at https://example.com/track. If the link still shows no status, let me know the order number and I'll look into it right away.\nThanks for your patience!"
+      },
+      "error": null,
+      "latency_ms": 990.88,
+      "prompt_tokens": 678,
+      "completion_tokens": 700,
+      "cost_usd": 0.00026085
+    },
+    {
+      "ticket_id": "ticket_007",
+      "schema_valid": true,
+      "category_correct": false,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "DELIVERY",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "SHIPPING",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants to know expected delivery time for their purchase.",
+        "draft_reply": "Hi, thanks for reaching out. To give you an accurate delivery estimate, could you please share your order number? Once we have that, we can check the shipping status and let you know when to expect your purchase. If you need any further assistance, feel free to let us know. Best regards, [Company]"
+      },
+      "error": null,
+      "latency_ms": 9519.18,
+      "prompt_tokens": 677,
+      "completion_tokens": 940,
+      "cost_usd": 0.00033277
+    },
+    {
+      "ticket_id": "ticket_064",
+      "schema_valid": true,
+      "category_correct": true,
+      "priority_correct": true,
+      "ground_truth": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General"
+      },
+      "prediction": {
+        "category": "INVOICE",
+        "priority": "medium",
+        "product": "General",
+        "summary": "Customer wants help reviewing bills from a specific person.",
+        "draft_reply": "Hello,\n\nThank you for reaching out. I’m happy to help you review your bills. Please log into your account, navigate to the Billing section, and select the bills issued to {{Person Name}}. If you need a detailed breakdown or have any questions about specific charges, let me know and I’ll provide the information right away.\n\nBest regards,\nSupport Team"
+      },
+      "error": null,
+      "latency_ms": 5337.85,
+      "prompt_tokens": 681,
+      "completion_tokens": 712,
+      "cost_usd": 0.00026467
     }
   ]
 }

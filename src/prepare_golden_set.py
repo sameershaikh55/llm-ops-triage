@@ -1,4 +1,3 @@
-import json
 import random
 from collections import Counter
 from typing import Any
@@ -71,10 +70,10 @@ def stratified_split(
     # Sort by (category, priority_rank) so identical strata sit adjacent to each other
     sorted_by_strata = sorted(
         shuffled,
-        key=lambda r: {
+        key=lambda r: (
             r["ground_truth"]["category"],
             PRIORITY_ORDER[r["ground_truth"]["priority"]],
-        },
+        ),
     )
 
     # Alternate dealing into dev (even indices) and test (odd indices)
