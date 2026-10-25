@@ -6,36 +6,31 @@ from groq import APIStatusError, RateLimitError
 from pydantic import ValidationError
 
 from src.config import (
-    DEFAULT_MODEL,
+    DEFAULT_PROMPT_VERSION,
     MAX_RETRIES,
     calculate_cost_usd,
+    get_git_sha,
     get_groq_client,
 )
+from src.prompts import load_prompt
 from src.schema import TriageOutput
 
-SYSTEM_PROMPT = f"""You are an expert customer support triage engine.
-Analyze the incoming customer support ticket and output ONLY a valid JSON object matching this exact JSON Schema:
 
-{json.dumps(TriageOutput.model_json_schema(), indent=2)}
-
-Rules:
-1. Output strictly valid JSON with the exact keys: category, priority, product, summary, draft_reply.
-2. 'category' MUST be one of the exact uppercase strings allowed in the schema.
-3. 'priority' MUST be one of: low, medium, high, urgent.
-    - 'urgent': account lockouts, unauthorized charges, or payment failures
-    - 'high': order cancellations, refunds, or failed deliveries
-    - 'medium': standard account/order updates or invoice requests
-    - 'low': general questions, feedback, or newsletter inquiries
-4. Keep 'summary' concise (under 25 words).
-5. Do not wrap the JSON in markdown code blocks or add any extra keys.
-"""
-
-
-def triage_ticket(ticket_text: str, model: str = DEFAULT_MODEL) -> dict[str, Any]:
+def triage_ticket(
+    ticket_text: str,
+    model: str | None = None,
+    prompt_version: str = DEFAULT_PROMPT_VERSION,
+) -> dict[str, Any]:
     """
-    Send a support ticket to Groq, validate the response against TriageOutput,
-    and return both the structured prediction and operational telemetry.
+    Load the versioned prompt artifact, send the support ticket to Groq,
+    validate the response against TriageOutput, and return the prediction
+    with full operational and provenance metadata (prompt_version, model, git_sha).
     """
+    prompt_cfg = load_prompt(name="triage", version=prompt_version)
+    active_model = model or prompt_cfg.model
+    git_sha = get_git_sha()
+    messages = prompt_cfg.render_messages(ticket_text=ticket_text)
+
     client = get_groq_client()
 
     response = None
@@ -46,13 +41,11 @@ def triage_ticket(ticket_text: str, model: str = DEFAULT_MODEL) -> dict[str, Any
             # Timer starts inside the retry block so rate-limit sleeps don't pollute latency_ms
             start_time = time.perf_counter()
             response = client.chat.completions.create(
-                model=model,
-                messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
-                    {"role": "user", "content": f"Support Ticket:\n{ticket_text}"},
-                ],
+                model=active_model,
+                messages=messages,  # type: ignore[arg-type]
                 response_format={"type": "json_object"},
-                temperature=0.0,  # Zero temperature for deterministic, repeatable evaluation
+                temperature=prompt_cfg.temperature,
+                max_tokens=prompt_cfg.max_tokens,
             )
             latency_ms = round((time.perf_counter() - start_time) * 1000, 2)
             break
@@ -87,6 +80,9 @@ def triage_ticket(ticket_text: str, model: str = DEFAULT_MODEL) -> dict[str, Any
             "schema_valid": True,
             "prediction": validated_data.model_dump(),
             "error": None,
+            "prompt_version": prompt_cfg.version,
+            "model": active_model,
+            "git_sha": git_sha,
             "latency_ms": latency_ms,
             "prompt_tokens": prompt_tokens,
             "completion_tokens": completion_tokens,
@@ -98,6 +94,9 @@ def triage_ticket(ticket_text: str, model: str = DEFAULT_MODEL) -> dict[str, Any
             "schema_valid": False,
             "prediction": None,
             "error": str(exc),
+            "prompt_version": prompt_cfg.version,
+            "model": active_model,
+            "git_sha": git_sha,
             "latency_ms": latency_ms,
             "prompt_tokens": prompt_tokens,
             "completion_tokens": completion_tokens,
@@ -113,6 +112,6 @@ if __name__ == "__main__":
         "Please help me right away."
     )
 
-    print("Sending sample ticket to Groq...\n")
+    print("Running triage with externalized YAML prompt registry...\n")
     result = triage_ticket(sample_ticket)
     print(json.dumps(result, indent=2))
