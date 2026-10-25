@@ -1,17 +1,18 @@
 import json
 import random
 from collections import Counter
-from pathlib import Path
 from typing import Any, get_args
 
 from datasets import load_dataset
 
+from src.config import (
+    DATASET_NAME,
+    RAW_SAMPLED_PATH,
+    SEED,
+    TARGET_SAMPLE_SIZE,
+)
+from src.io_utils import save_jsonl
 from src.schema import TicketCategory
-
-DATASET_NAME = "bitext/Bitext-customer-support-llm-chatbot-training-dataset"
-OUTPUT_PATH = Path("data/raw/sampled_200.jsonl")
-TARGET_SAMPLE_SIZE = 200
-SEED = 42
 
 
 def download_and_sample_dataset() -> list[dict[str, Any]]:
@@ -80,22 +81,14 @@ def download_and_sample_dataset() -> list[dict[str, Any]]:
     return formatted_records
 
 
-def save_jsonl(records: list[dict[str, Any]], output_path: Path) -> None:
-    """Save a list of dictionaries to a JSON Lines (.jsonl) file."""
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8") as f:
-        for record in records:
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
-
-
 if __name__ == "__main__":
     records = download_and_sample_dataset()
-    save_jsonl(records, OUTPUT_PATH)
+    save_jsonl(records, RAW_SAMPLED_PATH)
 
     # Print summary verification
     category_counts = Counter(r["ground_truth_category"] for r in records)
     print("Stratified Sampling Complete!")
-    print(f"Saved {len(records)} tickets to: {OUTPUT_PATH}\n")
+    print(f"Saved {len(records)} tickets to: {RAW_SAMPLED_PATH}\n")
     print("Category Distribution across the 200 sampled tickets:")
     for cat, count in sorted(category_counts.items()):
         print(f"  - {cat:<14}: {count} tickets")

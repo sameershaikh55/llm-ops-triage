@@ -1,40 +1,19 @@
 import json
 import random
 from collections import Counter
-from pathlib import Path
 from typing import Any
 
+from src.config import (
+    GOLDEN_DEV_PATH,
+    GOLDEN_TEST_PATH,
+    RAW_BOOTSTRAPPED_PATH,
+    SEED,
+    TARGET_SAMPLE_SIZE,
+)
+from src.io_utils import load_jsonl, save_jsonl
 from src.schema import TriageOutput
 
-INPUT_PATH = Path("data/raw/bootstrapped_200.jsonl")
-DEV_OUTPUT_PATH = Path("data/golden_dev.jsonl")
-TEST_OUTPUT_PATH = Path("data/golden_test.jsonl")
-
-EXPECTED_TOTAL = 200
-SEED = 42
-
 PRIORITY_ORDER = {"urgent": 0, "high": 1, "medium": 2, "low": 3}
-
-
-def load_jsonl(path: Path) -> list[dict[str, Any]]:
-    """Read all JSON lines from a file."""
-    if not path.exists():
-        return []
-    records: list[dict[str, Any]] = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                records.append(json.loads(line))
-    return records
-
-
-def save_jsonl(records: list[dict[str, Any]], output_path: Path) -> None:
-    """Save a list of dictionaries to a JSON Lines (.jsonl) file."""
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8") as f:
-        for record in records:
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 def audit_records(records: list[dict[str, Any]]) -> list[str]:
@@ -42,9 +21,9 @@ def audit_records(records: list[dict[str, Any]]) -> list[str]:
     Validate all 200 bootstrapped records against our Pydantic TriageOutput
     contract and flag any suspiciously long summaries or empty strings.
     """
-    if len(records) != EXPECTED_TOTAL:
+    if len(records) != TARGET_SAMPLE_SIZE:
         raise ValueError(
-            f"Expected {EXPECTED_TOTAL} records in {INPUT_PATH}, found {len(records)}."
+            f"Expected {TARGET_SAMPLE_SIZE} records in {RAW_BOOTSTRAPPED_PATH}, found {len(records)}."
         )
 
     seen_ids: set[str] = set()
@@ -165,10 +144,11 @@ def print_spot_check_samples(dev_records: list[dict[str, Any]]) -> None:
 
 
 if __name__ == "__main__":
-    print(f"Loading bootstrapped dataset from {INPUT_PATH}...")
-    all_records = load_jsonl(INPUT_PATH)
+    print(f"Loading bootstrapped dataset from {RAW_BOOTSTRAPPED_PATH}...")
+    all_records = load_jsonl(RAW_BOOTSTRAPPED_PATH)
 
     warnings = audit_records(all_records)
+    print("Audit passed: 200/200 records conform to TriageOutput schema.")
 
     if warnings:
         print(f"\nSoft Quality Warnings ({len(warnings)}):")
@@ -178,11 +158,11 @@ if __name__ == "__main__":
         print("Zero soft quality warnings found!")
 
     dev_set, test_set = stratified_split(all_records)
-    save_jsonl(dev_set, DEV_OUTPUT_PATH)
-    save_jsonl(test_set, TEST_OUTPUT_PATH)
+    save_jsonl(dev_set, GOLDEN_DEV_PATH)
+    save_jsonl(test_set, GOLDEN_TEST_PATH)
 
-    print(f"\nSaved {len(dev_set)} records -> {DEV_OUTPUT_PATH}")
-    print(f"Saved {len(test_set)} records -> {TEST_OUTPUT_PATH}")
+    print(f"\nSaved {len(dev_set)} records -> {GOLDEN_DEV_PATH}")
+    print(f"Saved {len(test_set)} records -> {GOLDEN_TEST_PATH}")
 
     print_distribution_report(dev_set, test_set)
     print_spot_check_samples(dev_set)

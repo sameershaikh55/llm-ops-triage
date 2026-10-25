@@ -1,32 +1,18 @@
 import argparse
-from datetime import datetime, timezone
-import json
 import math
-from pathlib import Path
 import time
+from datetime import UTC, datetime
+from pathlib import Path
 from typing import Any
 
-from src.triage import DEFAULT_MODEL, triage_ticket
-
-SPLIT_PATHS: dict[str, Path] = {
-    "dev": Path("data/golden_dev.jsonl"),
-    "test": Path("data/golden_test.jsonl"),
-}
-DEFAULT_OUTPUT_PATH = Path("results/baseline.json")
-SLEEP_BETWEEN_REQUESTS_SEC = 2.1
-
-
-def load_jsonl(path: Path) -> list[dict[str, Any]]:
-    """Load all JSON records from a .jsonl file."""
-    if not path.exists():
-        raise FileNotFoundError(f"Dataset file not found: {path}")
-    records: list[dict[str, Any]] = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                records.append(json.loads(line))
-    return records
+from src.config import (
+    BASELINE_RESULTS_PATH,
+    DEFAULT_MODEL,
+    SLEEP_BETWEEN_REQUESTS_SEC,
+    SPLIT_PATHS,
+)
+from src.io_utils import load_jsonl, save_json
+from src.triage import triage_ticket
 
 
 def compute_percentile(values: list[float], percentile: float) -> float:
@@ -55,7 +41,7 @@ def evaluate_dataset(
     split: str = "test",
     limit: int | None = None,
     model: str = DEFAULT_MODEL,
-    output_path: Path = DEFAULT_OUTPUT_PATH,
+    output_path: Path = BASELINE_RESULTS_PATH,
 ) -> dict[str, Any]:
     """Run the triage pipeline across the chosen Golden Set split and save metrics."""
     dataset_path = SPLIT_PATHS[split]
@@ -115,7 +101,7 @@ def evaluate_dataset(
 
         print(
             f"[{idx:03d}/{total:03d}] {ticket_id} | "
-            f"valid={str(is_valid):<5} | "
+            f"valid={is_valid!s:<5} | "
             f"cat={cat_status:<22} | "
             f"prio={prio_status:<18} | "
             f"{res['latency_ms']:>6.1f}ms"
@@ -161,7 +147,7 @@ def evaluate_dataset(
         "model": model,
         "dataset_split": str(dataset_path),
         "num_samples": total,
-        "timestamp_utc": datetime.now(timezone.utc).isoformat(),
+        "timestamp_utc": datetime.now(UTC).isoformat(),
         "metrics": {
             "schema_valid_rate": schema_valid_rate,
             "category_accuracy": category_accuracy,
@@ -176,10 +162,7 @@ def evaluate_dataset(
         "per_ticket_results": per_ticket_results,
     }
 
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    with output_path.open("w", encoding="utf-8") as f:
-        json.dump(report, f, indent=2, ensure_ascii=False)
-
+    save_json(report, output_path)
     print_scorecard(report, output_path)
     return report
 
@@ -226,7 +209,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--output",
         type=Path,
-        default=DEFAULT_OUTPUT_PATH,
+        default=BASELINE_RESULTS_PATH,
         help="Output JSON path. Default: results/baseline.json",
     )
     args = parser.parse_args()

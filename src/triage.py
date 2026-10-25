@@ -1,25 +1,17 @@
 import json
-import os
 import time
 from typing import Any
 
-from dotenv import load_dotenv
-from groq import APIStatusError, Groq, RateLimitError
+from groq import APIStatusError, RateLimitError
 from pydantic import ValidationError
 
+from src.config import (
+    DEFAULT_MODEL,
+    MAX_RETRIES,
+    calculate_cost_usd,
+    get_groq_client,
+)
 from src.schema import TriageOutput
-
-# Load GROQ_API_KEY from .env into environment variables
-load_dotenv()
-
-# Default fast, low-cost model for M0 baseline
-DEFAULT_MODEL = "openai/gpt-oss-20b"
-
-# Groq pricing for openai/gpt-oss-20b ($0.075 / 1M input tokens, $0.30 / 1M output tokens)
-INPUT_COST_PER_M = 0.075
-OUTPUT_COST_PER_M = 0.30
-
-MAX_RETRIES = 5
 
 SYSTEM_PROMPT = f"""You are an expert customer support triage engine.
 Analyze the incoming customer support ticket and output ONLY a valid JSON object matching this exact JSON Schema:
@@ -37,28 +29,6 @@ Rules:
 4. Keep 'summary' concise (under 25 words).
 5. Do not wrap the JSON in markdown code blocks or add any extra keys.
 """
-
-_CLIENT: Groq | None = None
-
-
-def get_groq_client() -> Groq:
-    """Return a singleton Groq client to reuse HTTP connections across eval runs."""
-    global _CLIENT
-    if _CLIENT is None:
-        api_key = os.getenv("GROQ_API_KEY")
-        if not api_key or api_key == "gsk_your_api_key_here":
-            raise RuntimeError(
-                "GROQ_API_KEY is missing or still set to placeholder. Check your .env file!"
-            )
-        _CLIENT = Groq(api_key=api_key)
-    return _CLIENT
-
-
-def calculate_cost_usd(prompt_tokens: int, completion_tokens: int) -> float:
-    """Calculate the estimated USD cost of a single Groq request."""
-    input_cost = (prompt_tokens / 1_000_000) * INPUT_COST_PER_M
-    output_cost = (completion_tokens / 1_000_000) * OUTPUT_COST_PER_M
-    return round(input_cost + output_cost, 8)
 
 
 def triage_ticket(ticket_text: str, model: str = DEFAULT_MODEL) -> dict[str, Any]:

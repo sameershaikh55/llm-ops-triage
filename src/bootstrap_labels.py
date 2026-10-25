@@ -1,27 +1,21 @@
 import argparse
 import json
-import os
 import time
-from pathlib import Path
 from typing import Any
 
-from dotenv import load_dotenv
 from groq import APIStatusError, Groq, RateLimitError
 from pydantic import BaseModel, Field, ValidationError
 
+from src.config import (
+    DEFAULT_MODEL,
+    MAX_RETRIES,
+    RAW_BOOTSTRAPPED_PATH,
+    RAW_SAMPLED_PATH,
+    SLEEP_BETWEEN_REQUESTS_SEC,
+    get_groq_client,
+)
+from src.io_utils import append_jsonl, load_jsonl
 from src.schema import TicketPriority, TriageOutput
-
-load_dotenv()
-
-INPUT_PATH = Path("data/raw/sampled_200.jsonl")
-OUTPUT_PATH = Path("data/raw/bootstrapped_200.jsonl")
-
-# using Groq model
-BOOTSTRAP_MODEL = "openai/gpt-oss-20b"
-
-# Groq Free Tier typically allows 30 requests/minute -> 2.1s pause keeps us safely at ~28 RPM
-SLEEP_BETWEEN_REQUESTS_SEC = 2.1
-MAX_RETRIES = 5
 
 
 class BootstrapFields(BaseModel):
@@ -65,27 +59,6 @@ Rules:
 """
 
 
-def load_jsonl(path: Path) -> list[dict[str, Any]]:
-    """Read all JSON lines from a file."""
-    if not path.exists():
-        return []
-    records: list[dict[str, Any]] = []
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line:
-                records.append(json.loads(line))
-    return records
-
-
-def append_jsonl(record: dict[str, Any], path: Path) -> None:
-    """Append a single JSON record to a .jsonl file and flush immediately to disk."""
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(record, ensure_ascii=False) + "\n")
-        f.flush()
-
-
 def generate_missing_fields(client: Groq, raw_record: dict[str, Any]) -> dict[str, Any]:
     """Call Groq with automatic retry/backoff to synthesize the 4 missing ground-truth fields."""
     user_prompt = (
@@ -98,7 +71,7 @@ def generate_missing_fields(client: Groq, raw_record: dict[str, Any]) -> dict[st
     for attempt in range(1, MAX_RETRIES + 1):
         try:
             response = client.chat.completions.create(
-                model=BOOTSTRAP_MODEL,
+                model=DEFAULT_MODEL,
                 messages=[
                     {"role": "system", "content": TEACHER_SYSTEM_PROMPT},
                     {"role": "user", "content": user_prompt},
@@ -143,17 +116,10 @@ def generate_missing_fields(client: Groq, raw_record: dict[str, Any]) -> dict[st
 
 def run_bootstrap(limit: int | None = None) -> None:
     """Main loop with checkpoint/resume support."""
-    api_key = os.getenv("GROQ_API_KEY")
-    if not api_key or api_key == "gsk_your_api_key_here":
-        raise RuntimeError("GROQ_API_KEY is missing or invalid in .env")
+    client = get_groq_client()
 
-    if not INPUT_PATH.exists():
-        raise FileNotFoundError(
-            f"Cannot find {INPUT_PATH}. Did you run 'uv run python -m src.download_data'?"
-        )
-
-    raw_records = load_jsonl(INPUT_PATH)
-    existing_record = load_jsonl(OUTPUT_PATH)
+    raw_records = load_jsonl(RAW_SAMPLED_PATH, missing_ok=False)
+    existing_record = load_jsonl(RAW_BOOTSTRAPPED_PATH, missing_ok=True)
     completed_ids: set[str] = {r["ticket_id"] for r in existing_record}
 
     pending_records = [r for r in raw_records if r["ticket_id"] not in completed_ids]
@@ -168,8 +134,6 @@ def run_bootstrap(limit: int | None = None) -> None:
     if not pending_records:
         print("All 200 tickets are already bootstrapped! Nothing left to do.")
         return
-
-    client = Groq(api_key=api_key)
 
     for idx, raw_record in enumerate(pending_records, start=1):
         ticket_id = raw_record["ticket_id"]
@@ -192,15 +156,17 @@ def run_bootstrap(limit: int | None = None) -> None:
             "ground_truth": ground_truth,
         }
 
-        append_jsonl(labeled_record, OUTPUT_PATH)
+        append_jsonl(labeled_record, RAW_BOOTSTRAPPED_PATH)
         print(f"Done -> priority={ground_truth['priority']}")
 
         # Respect Groq free-tier rate limits
         if idx < len(pending_records):
             time.sleep(SLEEP_BETWEEN_REQUESTS_SEC)
 
-    total_done = len(load_jsonl(OUTPUT_PATH))
-    print(f"\nRun complete! Total bootstrapped rows in {OUTPUT_PATH}: {total_done}/200")
+    total_done = len(load_jsonl(RAW_BOOTSTRAPPED_PATH, missing_ok=True))
+    print(
+        f"\nRun complete! Total bootstrapped rows in {RAW_BOOTSTRAPPED_PATH}: {total_done}/200"
+    )
 
 
 if __name__ == "__main__":
