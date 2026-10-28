@@ -1,4 +1,5 @@
 import argparse
+import logging
 import math
 import time
 from datetime import UTC, datetime
@@ -12,6 +13,7 @@ from src.config import (
     SPLIT_PATHS,
 )
 from src.io_utils import load_jsonl, save_json
+from src.logger import get_logger
 from src.triage import triage_ticket
 
 
@@ -54,6 +56,7 @@ def evaluate_dataset(
     if total == 0:
         raise ValueError(f"No records found in {dataset_path}")
 
+    get_logger("triage").setLevel(logging.WARNING)
     print(f"Starting M0 Evaluation | Model: {model} | Split: {split} ({total} tickets)")
     print("-" * 78)
 

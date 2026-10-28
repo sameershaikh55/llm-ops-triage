@@ -1,4 +1,5 @@
 import json
+import logging
 import time
 from typing import Any
 
@@ -12,8 +13,11 @@ from src.config import (
     get_git_sha,
     get_groq_client,
 )
+from src.logger import get_logger, log_event
 from src.prompts import load_prompt
 from src.schema import TriageOutput
+
+logger = get_logger("triage")
 
 
 def triage_ticket(
@@ -51,16 +55,47 @@ def triage_ticket(
             break
         except RateLimitError:
             wait_sec = 10 * attempt
-            print(
-                f"\n  [Rate Limit 429] Waiting {wait_sec}s before retry {attempt}/{MAX_RETRIES}..."
+            log_event(
+                logger,
+                logging.warning,
+                "groq_rate_limit_retry",
+                prompt_version=prompt_cfg.version,
+                model=active_model,
+                git_sha=git_sha,
+                error_class="rate_limit",
+                attempt=attempt,
+                max_retries=MAX_RETRIES,
+                wait_sec=wait_sec,
             )
             time.sleep(wait_sec)
         except APIStatusError as exc:
+            error_class = "provider_5xx" if exc.status_code >= 500 else "client_error"
             if attempt == MAX_RETRIES:
+                log_event(
+                    logger,
+                    logging.ERROR,
+                    "groq_api_failed_permanently",
+                    prompt_version=prompt_cfg.version,
+                    model=active_model,
+                    git_sha=git_sha,
+                    error_class=error_class,
+                    status_code=exc.status_code,
+                    attempt=attempt,
+                )
                 raise
             wait_sec = 3 * attempt
-            print(
-                f"\n  [API Warning {exc.status_code}] Retrying in {wait_sec}s ({attempt}/{MAX_RETRIES})..."
+            log_event(
+                logger,
+                logging.WARNING,
+                "groq_api_error_retry",
+                prompt_version=prompt_cfg.version,
+                model=active_model,
+                git_sha=git_sha,
+                error_class=error_class,
+                status_code=exc.status_code,
+                attempt=attempt,
+                max_retries=MAX_RETRIES,
+                wait_sec=wait_sec,
             )
             time.sleep(wait_sec)
 
@@ -76,9 +111,27 @@ def triage_ticket(
     # Validate the raw JSON against our strict Pydantic contract
     try:
         validated_data = TriageOutput.model_validate_json(raw_content)
+        prediction_dict = validated_data.model_dump()
+
+        log_event(
+            logger,
+            logging.INFO,
+            "triage_completed",
+            prompt_version=prompt_cfg.version,
+            model=active_model,
+            git_sha=git_sha,
+            schema_valid=True,
+            category=prediction_dict["category"],
+            priority=prediction_dict["priority"],
+            latency_ms=latency_ms,
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            cost_usd=cost_usd,
+        )
+
         return {
             "schema_valid": True,
-            "prediction": validated_data.model_dump(),
+            "prediction": prediction_dict,
             "error": None,
             "prompt_version": prompt_cfg.version,
             "model": active_model,
@@ -90,6 +143,21 @@ def triage_ticket(
             "raw_output": raw_content,
         }
     except ValidationError as exc:
+        log_event(
+            logger,
+            logging.WARNING,
+            "triage_schema_validation_failed",
+            prompt_version=prompt_cfg.version,
+            model=active_model,
+            git_sha=git_sha,
+            schema_valid=False,
+            error_class="schema_fail",
+            latency_ms=latency_ms,
+            prompt_tokens=prompt_tokens,
+            completion_tokens=completion_tokens,
+            cost_usd=cost_usd,
+        )
+
         return {
             "schema_valid": False,
             "prediction": None,

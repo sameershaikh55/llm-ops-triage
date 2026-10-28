@@ -16,7 +16,7 @@ class PromptConfig(BaseModel):
     description: str = Field(default="")
     model: str = Field(description="Default model ID associated with this prompt.")
     temperature: float = Field(default=0.0, ge=0.0, le=2.0)
-    max_tokens: int = Field(default=512, gt=0)
+    max_tokens: int = Field(default=2048, gt=0)
     system_template: str = Field(
         description="System prompt template with {json_schema}."
     )

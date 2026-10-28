@@ -44,6 +44,7 @@ OUTPUT_COST_PER_M = 0.30  # $0.30 per 1M output tokens
 # --- Operational & Rate-Limit Safeguards ---
 SLEEP_BETWEEN_REQUESTS_SEC = 2.1
 MAX_RETRIES = 5
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
 
 _CLIENT: Groq | None = None
 
