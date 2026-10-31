@@ -14,5 +14,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "httpx>=0.28.1",
+    "pytest>=9.2.0",
     "types-pyyaml>=6.0.12.20260906",
 ]
